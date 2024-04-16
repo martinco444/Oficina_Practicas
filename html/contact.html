@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Bienvenido a la Oficina de Prácticas</title>
+    <meta charset="utf-8">
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="Plantilla de sitio web HTML5/CSS3 sublime y sorprendente">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/fancybox-thumbs.css">
+    <link rel="stylesheet" type="text/css" href="css/fancybox-buttons.css">
+    <link rel="stylesheet" type="text/css" href="css/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/contact.css">
+    <style>
+        .form-container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+        .form-container label {
+			font-family: 'raleway-bold';
+			src: url('../fonts/raleway-bold.eot');
+			src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
+				url('../fonts/raleway-bold.woff') format('woff'),
+				url('../fonts/raleway-bold.ttf') format('truetype'),
+				url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
+			font-weight: normal;
+			font-style: normal;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+			font-size: 14px;
+        }
+        .form-container input[type="file"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #412669;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #F66D02;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="billboard light">
+        <header class="wrapper light">
+            <a href="#"><img class="logo" src="img/logo3.png" alt="Logotipo de la Oficina de Prácticas"></a>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./menu.html">Curso</a></li>
+                    <li><a href="./karaoke.html">Hoja de vida</a></li>
+                    <li><a href="./promotions.html">Empresas</a></li>
+                    <li><a href="./contact.html">Mis documentos</a></li>
+					<li><a href="./profile.html">Perfil</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="caption light animated wow fadeInDown clearfix">
+            <h1>Mis Documentos</h1>
+            <p>Sube toda la documentación relacionada con las prácticas</p>
+            <hr>
+        </div>
+        <div class="shadow"></div>
+    </section><!-- Fin de billboard -->
+
+    <section class="wrapper light">
+        <div class="form-container">
+            <h2>Subir Documentos</h2>
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+                <label for="cv">Hoja de vida</label>
+                <input type="file" name="cv" id="cv">
+                <label for="inscripcion">Inscripción</label>
+                <input type="file" name="inscripcion" id="inscripcion">
+                <label for="formularioAceptación">Formulario de Aceptación</label>
+                <input type="file" name="formularioAceptación" id="formularioAceptación">
+                <input type="submit" value="Enviar" name="submit">
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="wrapper">
+            <div class="rights">
+                <p>Oficina de Prácticas</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Inicio</a></li>
+                    <li><a href="./menu.html">Curso</a></li>
+                    <li><a href="./karaoke.html">Hoja de vida</a></li>
+                    <li><a href="./promotions.html">Empresas</a></li>
+                    <li><a href="./contact.html">Mis documentos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/fancybox.js"></script>
+    <script type="text/javascript" src="js/fancybox-buttons.js"></script>
+    <script type="text/javascript" src="js/fancybox-media.js"></script>
+    <script type="text/javascript" src="js/fancybox-thumbs.js"></script>
+    <script type="text/javascript" src="js/wow.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
