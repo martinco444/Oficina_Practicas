@@ -319,93 +319,6 @@ header.dark nav ul li a:hover{
 
 
 
-
-/*    testimonials    */
-.testimonials{
-    margin-top: 100px;
-}
-
-.testimonials ul{
-    margin-top: 70px;
-    list-style: none;
-}
-
-.testimonials ul li{
-    display: block;
-    float: left;
-    margin-left: 80px;
-    width: 313px;
-}
-
-.testimonials ul li:first-child{
-    margin-left: 0;
-}
-
-.testimonials ul li .quotes{
-    margin-right: 10px;
-}
-
-.testimonials ul li p{
-    color: #838181;
-    font-family: "raleway-regular";
-    font-size: 16px;
-    line-height: 28px;
-    letter-spacing: .5px;
-    padding-bottom: 30px;
-    margin-bottom: 20px;
-    border-bottom: 1px solid #ecebeb;
-    position: relative;
-}
-
-.testimonials ul li p .triangle{
-    display: block;
-    width: 10px;
-    height: 5px;
-    background: url('../img/testimonial_triangle.png') no-repeat;
-    position: absolute;
-    bottom: -5px;
-    left: 40px;
-}
-
-.testimonials ul li .client{
-    margin-left: 20px;
-}
-
-.testimonials ul li .client img.avatar{
-    float: left;
-    margin-right: 20px;
-    -webkit-border-radius: 100px;
-    -moz-border-radius: 100px;
-    -o-border-radius: 100px;
-    border-radius: 100px;
-}
-
-.testimonials ul li .client .client_details{
-    float: left;
-}
-
-.testimonials ul li .client .client_details h4{
-    color: #7b7979;
-    font-family: "raleway-semibold";
-    font-size: 14px;
-    font-weight: bold;
-    margin: 0 0 10px 0;
-}
-
-.testimonials ul li .client .client_details h5{
-    color: #7b7979;
-    font-family: "raleway-regular";
-    font-size: 12px;
-    margin: 0;
-    font-weight: normal;
-}
-
-
-
-
-
-
-
 /*    blog posts    */
 .blog_posts{
     margin-top: 100px;
@@ -473,12 +386,6 @@ header.dark nav ul li a:hover{
 }
 
 
-
-
-
-
-
-/*    footer    */
 footer{
     padding: 35px 0;
     overflow: hidden;
@@ -493,7 +400,7 @@ footer .rights p{
     color: #838181;
     font-family: "raleway-regular";
     font-size: 13px;
-    margin: 5px 0 0 40px; 
+    margin: px 0 0 40px; 
 }
 
 footer .rights p a{
@@ -530,4 +437,22 @@ footer nav ul li a{
 
 footer nav ul li a:hover{
     color: #616161;
+}
+
+
+#calendar-container p{
+    font-family: "raleway-bold";
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #F66D02;
+    margin-bottom: 16px;
+}
+
+#fc-dom-1{
+    font-size: 18px;
+    font-family: "raleway-bold";
+    font-weight: bold;
+    text-decoration: none;
+    color: #914308;   
 }

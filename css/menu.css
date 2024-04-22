@@ -366,3 +366,12 @@ footer nav ul li a:hover{
             margin-bottom: 30px;
         }
         
+
+ #container p{
+    font-family: "raleway-bold";
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #914308;
+    margin-bottom: 16px;
+}
