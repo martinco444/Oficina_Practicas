@@ -79,8 +79,7 @@ document.querySelector("#btnLogin").onclick = function(){
         alertPass.style.display = 'block';
     }else{
         alertPass.style.display = 'none';
-        alert("Usuario: "+strEmailUser+' - '+'Contraseña: '+strPassUser);
-
+        window.location.href = "index.html";
     }
 }
 
