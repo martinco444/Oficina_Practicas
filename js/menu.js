@@ -387,3 +387,29 @@ yepnope({
 	both: ['js/zoom.min.js', 'js/magazine.js', 'css/magazine.css'],
 	complete: loadApp
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+	  initialView: 'dayGridMonth',
+	  editable: true, // Permite editar eventos
+	  selectable: true, // Permite seleccionar fechas
+	  select: function(arg) {
+		// Abre el formulario para agregar un evento cuando se selecciona una fecha
+		var startDate = arg.startStr;
+		var endDate = arg.endStr;
+		openAddEventForm(startDate, endDate);
+	  },
+	  events: [] // Puedes inicializar los eventos aquí o cargarlos desde una fuente externa
+	});
+	calendar.render();
+  
+	// Manejador de envío de formulario para agregar eventos
+	document.getElementById('addEventForm').addEventListener('submit', function(e) {
+	  e.preventDefault();
+	  var eventName = document.getElementById('eventName').value;
+	  var eventDate = document.getElementById('eventDate').value;
+	  calendar.addEvent({ title: eventName, start: eventDate });
+	  closeAddEventForm();
+	});
+  });
