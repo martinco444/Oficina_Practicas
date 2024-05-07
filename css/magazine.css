@@ -131,11 +131,6 @@ body{
 }
 
 .magazine-viewport .shadow{
-	-webkit-transition: -webkit-box-shadow 0.5s;
-	-moz-transition: -moz-box-shadow 0.5s;
-	-o-transition: -webkit-box-shadow 0.5s;
-	-ms-transition: -ms-box-shadow 0.5s;
-
 	-webkit-box-shadow:0 0 20px #ccc;
 	-moz-box-shadow:0 0 20px #ccc;
 	-o-box-shadow:0 0 20px #ccc;

@@ -322,51 +322,6 @@ footer nav ul li a:hover{
 
 
 
-        /* Estilos curso */
-        .curso {
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            margin-left: 80px;
-        }
-        .circulo {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #f66c02a6;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 24px;
-        }
-        .tarea {
-            margin-bottom: 10px;
-        }
-        .boton {
-            padding: 5px 10px;
-            background-color: #412669;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-bottom: 30px;
-        }
-        .boton:hover {
-            background-color: #F66D02;
-        }
-        .subtarea {
-            margin-left: 20px;
-        }
-        .curso h1{
-            font-family: "raleway-bold";
-            font-size: 35px;
-            font-weight: bold; 
-            margin-bottom: 30px;
-        }
-        
-
  #container p{
     font-family: "raleway-bold";
     font-size: 40px;
@@ -374,4 +329,69 @@ footer nav ul li a:hover{
     text-decoration: none;
     color: #914308;
     margin-bottom: 16px;
+}
+
+/* Agrega los nuevos estilos al final de tu archivo CSS existente */
+
+/* Estilos curso */
+.curso {
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.curso h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.curso > div {
+    margin-bottom: 40px;
+}
+
+.circulo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f66c02a6;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 20px;
+    float: left;
+}
+
+.task-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-item {
+    margin-bottom: 10px;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.boton {
+    background-color: #412669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #F66D02;
 }

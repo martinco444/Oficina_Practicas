@@ -32,10 +32,10 @@
 		<div class="shadow"></div>
 	</section><!--  End billboard  -->
 
-	<div class="curso">
 
-		<h1>Curso Online para las practicas</h1>
-		<br>
+    <div class="curso">
+        <h1>Curso Online para las prácticas</h1>
+        <br>
         <!-- Introducción de Prácticas -->
         <div>
             <div class="circulo" id="circulo-introduccion">0%</div>
@@ -43,20 +43,29 @@
             <ul class="task-list">
                 <li class="task-item" id="task-introduccion-1">
                     <input type="checkbox" id="task-introduccion-1-checkbox">
-                    <label for="task-introduccion-1-checkbox">Leer el material de introducción</label>
+                    <label for="task-introduccion-1-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'introduccion-1')">Leer el material de introducción</a></label>
+                    <div class="subtarea" id="subtarea-introduccion-1" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-introduccion-2">
                     <input type="checkbox" id="task-introduccion-2-checkbox">
-                    <label for="task-introduccion-2-checkbox">Ver el video introductorio</label>
+                    <label for="task-introduccion-2-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'introduccion-2')">Ver el video introductorio</a></label>
+                    <div class="subtarea" id="subtarea-introduccion-2" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-introduccion-3">
                     <input type="checkbox" id="task-introduccion-3-checkbox">
-                    <label for="task-introduccion-3-checkbox">Completar la prueba de conocimientos</label>
+                    <label for="task-introduccion-3-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'introduccion-3')">Completar la prueba de conocimientos</a></label>
+                    <div class="subtarea" id="subtarea-introduccion-3" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
             </ul>
-            <button class="boton" onclick="completarTarea('introduccion')">Completar Tarea</button>
+            <button class="boton" onclick="completarTareaIntroduccion()">Completar Tarea</button>
         </div>
-
+    
         <!-- Capacitación de Riesgos -->
         <div>
             <div class="circulo" id="circulo-capacitacion">0%</div>
@@ -64,20 +73,29 @@
             <ul class="task-list">
                 <li class="task-item" id="task-capacitacion-1">
                     <input type="checkbox" id="task-capacitacion-1-checkbox">
-                    <label for="task-capacitacion-1-checkbox">Leer el material de riesgos</label>
+                    <label for="task-capacitacion-1-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'capacitacion-1')">Leer el material de riesgos</a></label>
+                    <div class="subtarea" id="subtarea-capacitacion-1" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-capacitacion-2">
                     <input type="checkbox" id="task-capacitacion-2-checkbox">
-                    <label for="task-capacitacion-2-checkbox">Ver el video de capacitación</label>
+                    <label for="task-capacitacion-2-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'capacitacion-2')">Ver el video de capacitación</a></label>
+                    <div class="subtarea" id="subtarea-capacitacion-2" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-capacitacion-3">
                     <input type="checkbox" id="task-capacitacion-3-checkbox">
-                    <label for="task-capacitacion-3-checkbox">Completar la evaluación de riesgos</label>
+                    <label for="task-capacitacion-3-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'capacitacion-3')">Completar la evaluación de riesgos</a></label>
+                    <div class="subtarea" id="subtarea-capacitacion-3" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
             </ul>
-            <button class="boton" onclick="completarTarea('capacitacion')">Completar Tarea</button>
+            <button class="boton" onclick="completarTareaCapacitacionDeRiesgos()">Completar Tarea</button>
         </div>
-
+    
         <!-- Realización de la Hoja de Vida -->
         <div>
             <div class="circulo" id="circulo-hoja-de-vida">0%</div>
@@ -85,45 +103,102 @@
             <ul class="task-list">
                 <li class="task-item" id="task-hoja-de-vida-1">
                     <input type="checkbox" id="task-hoja-de-vida-1-checkbox">
-                    <label for="task-hoja-de-vida-1-checkbox">Recopilar información personal</label>
+                    <label for="task-hoja-de-vida-1-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'hoja-de-vida-1')">Recopilar información personal</a></label>
+                    <div class="subtarea" id="subtarea-hoja-de-vida-1" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-hoja-de-vida-2">
                     <input type="checkbox" id="task-hoja-de-vida-2-checkbox">
-                    <label for="task-hoja-de-vida-2-checkbox">Agregar experiencia laboral</label>
+                    <label for="task-hoja-de-vida-2-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'hoja-de-vida-2')">Agregar experiencia laboral</a></label>
+                    <div class="subtarea" id="subtarea-hoja-de-vida-2" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
                 <li class="task-item" id="task-hoja-de-vida-3">
                     <input type="checkbox" id="task-hoja-de-vida-3-checkbox">
-                    <label for="task-hoja-de-vida-3-checkbox">Incluir habilidades y certificaciones</label>
+                    <label for="task-hoja-de-vida-3-checkbox"><a href="#" class="task-link" onclick="toggleSubtarea(event, 'hoja-de-vida-3')">Incluir habilidades y certificaciones</a></label>
+                    <div class="subtarea" id="subtarea-hoja-de-vida-3" style="display: none;">
+                        Contenido...
+                    </div>
                 </li>
             </ul>
-            <button class="boton" onclick="completarTarea('hoja-de-vida')">Completar Tarea</button>
-			
+            <button class="boton" onclick="completarTareaHojaDeVida()">Completar Tarea</button>
         </div>
-    </div>
-
+    
     <script>
         let progreso = {
-            'introduccion': 0,
-            'capacitacion': 0,
-            'hoja-de-vida': 0
+            'introduccion': {
+                'task-introduccion-1-checkbox': 0,
+                'task-introduccion-2-checkbox': 0,
+                'task-introduccion-3-checkbox': 0
+            },
+            'capacitacion': {
+                'task-capacitacion-1-checkbox': 0,
+                'task-capacitacion-2-checkbox': 0,
+                'task-capacitacion-3-checkbox': 0
+            },
+            'hoja-de-vida': {
+                'task-hoja-de-vida-1-checkbox': 0,
+                'task-hoja-de-vida-2-checkbox': 0,
+                'task-hoja-de-vida-3-checkbox': 0
+            }
         };
-
+    
         function actualizarProgreso() {
-            let total = Object.values(progreso).reduce((acc, val) => acc + val, 0);
-            let porcentaje = Math.round((total / (Object.keys(progreso).length * 100)) * 100);
-
-            document.getElementById('circulo-introduccion').innerText = porcentaje + '%';
-            document.getElementById('circulo-capacitacion').innerText = porcentaje + '%';
-            document.getElementById('circulo-hoja-de-vida').innerText = porcentaje + '%';
+            let totalIntroduccion = Object.values(progreso['introduccion']).reduce((acc, val) => acc + val, 0);
+            let porcentajeIntroduccion = Math.round((totalIntroduccion / (Object.keys(progreso['introduccion']).length * 100)) * 100);
+    
+            let totalCapacitacion = Object.values(progreso['capacitacion']).reduce((acc, val) => acc + val, 0);
+            let porcentajeCapacitacion = Math.round((totalCapacitacion / (Object.keys(progreso['capacitacion']).length * 100)) * 100);
+    
+            let totalHojaDeVida = Object.values(progreso['hoja-de-vida']).reduce((acc, val) => acc + val, 0);
+            let porcentajeHojaDeVida = Math.round((totalHojaDeVida / (Object.keys(progreso['hoja-de-vida']).length * 100)) * 100);
+    
+            document.getElementById('circulo-introduccion').innerText = porcentajeIntroduccion + '%';
+            document.getElementById('circulo-capacitacion').innerText = porcentajeCapacitacion + '%';
+            document.getElementById('circulo-hoja-de-vida').innerText = porcentajeHojaDeVida + '%';
         }
-
+    
+        function toggleSubtarea(event, id) {
+            event.preventDefault();
+            let subtarea = document.getElementById('subtarea-' + id);
+            subtarea.style.display = subtarea.style.display === 'none' ? 'block' : 'none';
+        }
+    
         function completarTarea(seccion) {
-            progreso[seccion] = 100;
+            let checkboxes = document.querySelectorAll('.task-item input[type="checkbox"]');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = true;
+                progreso[seccion][checkbox.id] = 100;
+            });
+            actualizarProgreso();
+        }
+    
+        function completarTareaHojaDeVida() {
+            for (let tarea in progreso['hoja-de-vida']) {
+                progreso['hoja-de-vida'][tarea] = 100;
+            }
+            actualizarProgreso();
+        }
+    
+        function completarTareaIntroduccion() {
+            for (let tarea in progreso['introduccion']) {
+                progreso['introduccion'][tarea] = 100;
+            }
+            actualizarProgreso();
+        }
+    
+        function completarTareaCapacitacionDeRiesgos() {
+            for (let tarea in progreso['capacitacion']) {
+                progreso['capacitacion'][tarea] = 100;
+            }
             actualizarProgreso();
         }
     </script>
+    
 
-
+</div>
 <footer>
 	<div class="wrapper">
 		<div class="rights">
@@ -141,7 +216,7 @@
                 <li><a href="./profile.html">Perfil</a></li>
             </ul>
 		</nav>
-	</div>		
+			
 </footer>
 <script type="text/javascript" src="js/jquery.min.1.7.js"></script>
 <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
