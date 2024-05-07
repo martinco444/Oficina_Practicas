@@ -2,104 +2,17 @@
 <html lang="en">
 <head>
 	<title>Oficina De Practicas</title>
+	
 	<meta charset="utf-8">
 	<meta name="author" content="pixelhint.com">
 	<meta name="description" content="Sublime Stunning free HTML5/CSS3 website template"/>
+	<link rel="icon" type="image/png" href="./img/logoLogin.png"/>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/fancybox.css">
 	<link rel="stylesheet" type="text/css" href="css/animate.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-    <script>
 
-document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    editable: true, // Permite editar eventos
-    selectable: true, // Permite seleccionar fechas
-    select: function(arg) {
-      // Abre el formulario para agregar un evento cuando se selecciona una fecha
-      var startDate = arg.startStr;
-      var endDate = arg.endStr;
-      openAddEventForm(startDate, endDate);
-    },
-    events: [] // Puedes inicializar los eventos aquí o cargarlos desde una fuente externa
-  });
-  calendar.render();
-
-  // Manejador de envío de formulario para agregar eventos
-  document.getElementById('addEventForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var eventName = document.getElementById('eventName').value;
-    var eventDate = document.getElementById('eventDate').value;
-    calendar.addEvent({ title: eventName, start: eventDate });
-    closeAddEventForm();
-  });
-});
-
-// Función para abrir el formulario de agregar evento
-function openAddEventForm(startDate, endDate) {
-  document.getElementById('eventDate').value = startDate;
-  document.getElementById('addEventForm').style.display = 'block';
-}
-
-
-
-    </script>
-
-    <style>
-		#calendar {
-			width: 70%; /* Ancho del calendario */
-			height: auto; /* Altura automática */
-			margin: 0 auto; /* Centrar horizontalmente */
-			}
-
-		.fc-daygrid-day {
-			width: 20px; /* Ancho de los días del mes */
-			height: 20px; /* Altura de los días del mes */
-		}
-
-		.fc-col-header-cell {
-			font-size: 14px; /* Tamaño de fuente de las cabeceras de columna */
-			padding: 2px; /* Espacio interno de las cabeceras de columna */
-		}
-
-        .fc .fc-col-header-cell-cushion { /* needs to be same precedence */
-            padding-top: 5px; /* an override! */
-            padding-bottom: 5px; /* an override! */
-        }
-
-        .fc .fc-col-header-cell-cushion {
-            display: inline-block;
-            padding: 2px 4px;
-		}
-		.fc-event {
-		background-color: #3788d8; /* Color de fondo del evento */
-		color: white; /* Color del texto del evento */
-		}
-
-		.fc-dayGridDay-frame {
-			background-color: #f0f0f0; /* Color de fondo del día */
-		}
-		.fc-event-title {
-			font-size: 14px; /* Tamaño de la fuente del título del evento */
-		}
-
-		.fc-daygrid-day-number {
-			font-size: 15px; /* Tamaño de la fuente del número del día */
-		}
-		.fc-event {
-			border: 1px solid #3788d8; /* Borde del evento */
-			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Sombra del evento */
-		}
-		.fc-daygrid-event {
-			width: 90%; /* Ancho del evento */
-			margin: 2px auto; /* Margen del evento */
-		}
-		
-		
-    </style>
 </head>
 <body>
 
@@ -108,12 +21,11 @@ function openAddEventForm(startDate, endDate) {
 			<a href="#"><img class="logo" src="./img/logoLogin.png" alt="Restaurant Logo"/></a>
 			<nav>
 				<ul>
-					<li><a href="#">Inicio</a></li>
-					
-					<li><a href="./menu.html">Curso</a></li>
-					<li><a href="./karaoke.html">Hoja de vida</a></li>
-					<li><a href="./promotions.html">Empresas</a></li>
-					<li><a href="./contact.html">Mis documentos</a></li>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="./curso.html">Curso</a></li>
+					<li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+					<li><a href="./empresas.html">Empresas</a></li>
+					<li><a href="./mis_documentos.html">Mis documentos</a></li>
 					<li><a href="./profile.html">Perfil</a></li>
 				</ul>
 			</nav>
@@ -126,6 +38,18 @@ function openAddEventForm(startDate, endDate) {
 		</div>
 		<div class="shadow"></div>
 	</section>
+
+	<div class="image-carousel">
+		<div class="slide">
+			<img src="./img/prácticas-universitarias.png" alt="Imagen 1">
+		</div>
+		<div class="slide">
+			<img src="./img/prácticas-universitarias1.png" alt="Imagen 2">
+		</div>
+	</div>
+	
+	
+
 	<div id="calendar-container">
 		<p style="text-align: center;">Calendario de eventos</p>
 		<div id='calendar' ></div>
@@ -155,18 +79,19 @@ function openAddEventForm(startDate, endDate) {
 
 			<nav>
 				<ul>
-					<li><a href="./index.html">Inicio</a></li>
-					<li><a href="./menu.html">Curso</a></li>
-					<li><a href="./karaoke.html">Hoja de vida</a></li>
-					<li><a href="./promotions.html">Empresas</a></li>
-					<li><a href="./contact.html">Mis documentos</a></li>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="./curso.html">Curso</a></li>
+					<li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+					<li><a href="./empresas.html">Empresas</a></li>
+					<li><a href="./mis_documentos.html">Mis documentos</a></li>
+					<li><a href="./profile.html">Perfil</a></li>
 				</ul>
 			</nav>
 		</div>		
 	</footer>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/fancybox.js"></script>
     <script type="text/javascript" src="js/wow.js"></script>
@@ -175,7 +100,5 @@ function openAddEventForm(startDate, endDate) {
 	<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
 	<script type="text/javascript" src="js/hash.js"></script>
 	<script type="text/javascript" src="js/menu.js"></script>
-
-	
 </body>
 </html>

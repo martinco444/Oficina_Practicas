@@ -70,6 +70,7 @@ document.querySelector("#btnRegister").onclick = function(){
 document.querySelector("#btnLogin").onclick = function(){
     const strEmailUser = document.querySelector("#emailUser").value;
 	const strPassUser = document.querySelector("#passUser").value;
+    const strPersona = document.querySelector("#persona").value;
 
     const alertPass = document.querySelector('#alertPass');
 
@@ -79,7 +80,14 @@ document.querySelector("#btnLogin").onclick = function(){
         alertPass.style.display = 'block';
     }else{
         alertPass.style.display = 'none';
-        window.location.href = "index.html";
+    
+        if (strPersona === "Estudiante"){
+            window.location.href = "index.html";
+        }
+        else{
+            window.location.href = "indexprofesor.html";
+        }
+    
     }
 }
 
