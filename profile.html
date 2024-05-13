@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="author" content="pixelhint.com">
     <meta name="description" content="Página de perfil del estudiante">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/fancybox-thumbs.css">
     <link rel="stylesheet" type="text/css" href="css/fancybox-buttons.css">
@@ -13,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="css/contact.css">
     <link rel="icon" type="image/png" href="./img/logoLogin.png"/>
     <style>
-        .profile-container {
+        .container {
             max-width: 95%;
             margin: 0 auto;
             padding: 20px;
@@ -26,7 +27,7 @@
             text-align: center;
             color: #333;
         }
-        .profile-container label {
+        .profile-container label, p {
             font-family: 'raleway-bold';
             src: url('../fonts/raleway-bold.eot');
             src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
@@ -47,20 +48,91 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .profile-container input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #412669;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            display: block;
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
             margin: 0 auto;
+            padding: 20px;
         }
-        .profile-container input[type="submit"]:hover {
-            background-color: #F66D02;
+
+        /* Estilos de las secciones del perfil */
+        .profile-section {
+            margin-bottom: 20px;
         }
+
+        .profile-section h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .profile-section p {
+            margin: 5px 0;
+            color: #666;
+        }
+
+        .edit-mode {
+            display: none;
+        }
+
+        /* Estilos del botón de editar */
+        #editarPerfil {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        #editarPerfil:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.profile-section {
+    margin-bottom: 20px;
+}
+
+.profile-image-container {
+    display: inline-block;
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+.profile-image-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+}
+
+.add-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: #b3afad88;
+}
+
+#imagenPerfil {
+    display: none;
+}
+
     </style>
 </head>
 <body>
@@ -70,11 +142,11 @@
             <a href="#"><img class="logo" src="img/logo3.png" alt="Logotipo de la Oficina de Prácticas"></a>
             <nav>
                 <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./menu.html">Curso</a></li>
-                    <li><a href="./karaoke.html">Hoja de vida</a></li>
-                    <li><a href="./promotions.html">Empresas</a></li>
-                    <li><a href="./contact.html">Mis documentos</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./curso.html">Curso</a></li>
+                    <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+                    <li><a href="./empresas.html">Empresas</a></li>
+                    <li><a href="./mis_documentos.html">Mis documentos</a></li>
                     <li><a href="./profile.html">Perfil</a></li>
                 </ul>
             </nav>
@@ -88,6 +160,98 @@
         <div class="shadow"></div>
     </section><!-- Fin de billboard -->
 
+    <div class="container">
+        <div class="profile-section">
+            <label for="imagenPerfil" class="profile-image-container">
+                <span class="add-icon"><i class="fas fa-plus"></i></span>
+                <input type="file" id="imagenPerfil" accept=".png">
+                <img src="#" alt="+" id="vistaPrevia">
+            </label>
+        </div>
+    <div class="profile-container">
+        <h2>Información Personal</h2>
+        <p><strong>Nombre:</strong> <span id="nombre">Juan Pérez</span></p>
+        <input type="text" id="nombreInput" class="edit-mode" style="display:none;" value="Juan Pérez">
+        <label for="ubicacion">Ubicación:</label>
+        <input type="text" id="ubicacionInput" class="edit-mode" style="display:none;" value="Ciudad de México">
+        <p><strong>Correo Electrónico:</strong> <span id="correo">juan@example.com</span></p>
+        <input type="email" id="correoInput" class="edit-mode" style="display:none;" value="juan@example.com">
+        <p><strong>Teléfono:</strong> <span id="telefono">+1234567890</span></p>
+        <input type="tel" id="telefonoInput" class="edit-mode" style="display:none;" value="+1234567890">
+
+        <h2>Formación Académica</h2>
+        <p><strong>Universidad:</strong> <span id="universidad">Universidad Nacional Autónoma de México</span></p>
+        <input type="text" id="universidadInput" class="edit-mode" style="display:none;" value="Universidad Nacional Autónoma de México">
+        <p><strong>Carrera:</strong> <span id="carrera">Ingeniería en Sistemas</span></p>
+        <input type="text" id="carreraInput" class="edit-mode" style="display:none;" value="Ingeniería en Sistemas">
+        <p><strong>Nivel Educativo:</strong> <span id="nivel_educativo">Licenciatura</span></p>
+        <input type="text" id="nivel_educativoInput" class="edit-mode" style="display:none;" value="Licenciatura">
+        <p><strong>Fecha de Inicio de Estudios:</strong> <span id="fecha_inicio_estudios">2018-09-01</span></p>
+        <input type="date" id="fecha_inicio_estudiosInput" class="edit-mode" style="display:none;" value="2018-09-01">
+        <p><strong>Fecha de Graduación Esperada:</strong> <span id="fecha_graduacion_esperada">2022-06-30</span></p>
+        <input type="date" id="fecha_graduacion_esperadaInput" class="edit-mode" style="display:none;" value="2022-06-30">
+        <!-- Agrega otros campos de formación académica según sea necesario -->
+        
+        
+        <h2>Experiencia Laboral</h2>
+        <p><strong>Empresa:</strong> <span id="empresa">Empresa XYZ</span></p>
+        <input type="text" id="empresaInput" class="edit-mode" style="display:none;" value="Empresa XYZ">
+        <p><strong>Puesto:</strong> <span id="puesto">Desarrollador Web</span></p>
+        <input type="text" id="puestoInput" class="edit-mode" style="display:none;" value="Desarrollador Web">
+        <p><strong>Fecha de Inicio:</strong> <span id="fecha_inicio_trabajo">2020-01-15</span></p>
+        <input type="date" id="fecha_inicio_trabajoInput" class="edit-mode" style="display:none;" value="2020-01-15">
+        <p><strong>Fecha de Finalización:</strong> <span id="fecha_fin_trabajo">2021-12-31</span></p>
+        <input type="date" id="fecha_fin_trabajoInput" class="edit-mode" style="display:none;" value="2021-12-31">
+        <p><strong>Responsabilidades:</strong> <span id="responsabilidades">Desarrollo de aplicaciones web y mantenimiento de sistemas.</span></p>
+        <textarea id="responsabilidadesInput" class="edit-mode" style="display:none;">Desarrollo de aplicaciones web y mantenimiento de sistemas.</textarea>
+        <!-- Agrega otros campos de experiencia laboral según sea necesario -->
+        
+        
+        <h2>Habilidades</h2>
+        <p><strong>Idiomas:</strong> <span id="idiomas">Español, Inglés</span></p>
+        <input type="text" id="idiomasInput" class="edit-mode" style="display:none;" value="Español, Inglés">
+        <p><strong>Habilidades Técnicas:</strong> <span id="habilidades_tecnicas">HTML, CSS, JavaScript</span></p>
+        <input type="text" id="habilidades_tecnicasInput" class="edit-mode" style="display:none;" value="HTML, CSS, JavaScript">
+        <p><strong>Habilidades Blandas:</strong> <span id="habilidades_blandas">Trabajo en equipo, Comunicación</span></p>
+        <input type="text" id="habilidades_blandasInput" class="edit-mode" style="display:none;" value="Trabajo en equipo, Comunicación">
+        <!-- Agrega otros campos de habilidades según sea necesario -->
+        
+        
+        <h2>Proyectos Relevantes</h2>
+        <p><strong>Nombre del Proyecto:</strong> <span id="proyecto_nombre">Sistema de Gestión de Ventas</span></p>
+        <input type="text" id="proyecto_nombreInput" class="edit-mode" style="display:none;" value="Sistema de Gestión de Ventas">
+        <p><strong>Descripción del Proyecto:</strong> <span id="proyecto_descripcion">Desarrollo de un sistema web para la gestión de ventas y clientes.</span></p>
+        <textarea id="proyecto_descripcionInput" class="edit-mode" style="display:none;">Desarrollo de un sistema web para la gestión de ventas y clientes.</textarea>
+        <p><strong>Fecha del Proyecto:</strong> <span id="proyecto_fecha">2021-03-15</span></p>
+        <input type="date" id="proyecto_fechaInput" class="edit-mode" style="display:none;" value="2021-03-15">
+        <!-- Agrega más campos según sea necesario para describir proyectos relevantes -->
+        
+        
+        <h2>Certificaciones y Logros</h2>
+        <p><strong>Nombre de la Certificación o Logro:</strong> <span id="certificacion_nombre">Certificación en Desarrollo Web</span></p>
+        <input type="text" id="certificacion_nombreInput" class="edit-mode" style="display:none;" value="Certificación en Desarrollo Web">
+        <p><strong>Institución que otorga la Certificación:</strong> <span id="certificacion_institucion">Plataforma de Cursos en Línea</span></p>
+        <input type="text" id="certificacion_institucionInput" class="edit-mode" style="display:none;" value="Plataforma de Cursos en Línea">
+        <p><strong>Fecha de Obtención:</strong> <span id="certificacion_fecha">2020-06-30</span></p>
+        <input type="date" id="certificacion_fechaInput" class="edit-mode" style="display:none;" value="2020-06-30">
+        <!-- Agrega más campos según sea necesario para listar certificaciones y logros -->
+        
+        
+        <h2>Referencias</h2>
+        <p><strong>Nombre de la Referencia:</strong> <span id="referencia_nombre">María García</span></p>
+        <input type="text" id="referencia_nombreInput" class="edit-mode" style="display:none;" value="María García">
+        <p><strong>Cargo o Relación:</strong> <span id="referencia_cargo">Jefa de Proyecto</span></p>
+        <input type="text" id="referencia_cargoInput" class="edit-mode" style="display:none;" value="Jefa de Proyecto">
+        <p><strong>Teléfono de la Referencia:</strong> <span id="referencia_telefono">+1234567890</span></p>
+        <input type="tel" id="referencia_telefonoInput" class="edit-mode" style="display:none;" value="+1234567890">
+        <p><strong>Correo Electrónico de la Referencia:</strong> <span id="referencia_correo">maria@example.com</span></p>
+        <input type="email" id="referencia_correoInput" class="edit-mode" style="display:none;" value="maria@example.com">
+        <!-- Agrega más campos según sea necesario para las referencias -->
+        
+
+        <button id="editarPerfil">Editar</button>
+    </div>
+</div>
   
 
     <footer>
@@ -98,22 +262,47 @@
 
             <nav>
                 <ul>
-                    <li><a href="./index.html">Inicio</a></li>
-                    <li><a href="./menu.html">Curso</a></li>
-                    <li><a href="./karaoke.html">Hoja de vida</a></li>
-                    <li><a href="./promotions.html">Empresas</a></li>
-                    <li><a href="./contact.html">Mis documentos</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./curso.html">Curso</a></li>
+                    <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+                    <li><a href="./empresas.html">Empresas</a></li>
+                    <li><a href="./mis_documentos.html">Mis documentos</a></li>
+                    <li><a href="./profile.html">Perfil</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/fancybox.js"></script>
-    <script type="text/javascript" src="js/fancybox-buttons.js"></script>
-    <script type="text/javascript" src="js/fancybox-media.js"></script>
-    <script type="text/javascript" src="js/fancybox-thumbs.js"></script>
-    <script type="text/javascript" src="js/wow.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script>
+ // Función para mostrar la vista previa de la imagen seleccionada
+        function mostrarVistaPrevia() {
+            var archivo = document.getElementById("imagenPerfil").files[0];
+            var vistaPrevia = document.getElementById("vistaPrevia");
+
+            var lector = new FileReader();
+            lector.onload = function(evento) {
+                vistaPrevia.src = evento.target.result;
+            };
+            lector.readAsDataURL(archivo);
+        }
+
+        // Evento para mostrar la vista previa al seleccionar una imagen
+        document.getElementById("imagenPerfil").addEventListener("change", function() {
+            mostrarVistaPrevia();
+        });
+
+        // Función para cambiar entre el modo de edición y visualización
+        function toggleEditMode() {
+            var inputs = document.getElementsByClassName("edit-mode");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].style.display = (inputs[i].style.display === "none") ? "inline" : "none";
+            }
+        }
+
+        // Evento para activar el modo de edición al hacer clic en el botón de editar
+        document.getElementById("editarPerfil").addEventListener("click", function() {
+            toggleEditMode();
+        });
+    </script>
 </body>
 </html>

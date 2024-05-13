@@ -84,10 +84,11 @@ document.querySelector("#btnLogin").onclick = function(){
         if (strPersona === "Estudiante"){
             window.location.href = "index.html";
         }
-        else{
+        else if (strPersona === "Profesor"){
             window.location.href = "indexprofesor.html";
         }
-    
+        else if (strPersona === "Empresa")
+            window.location.href = "indexempresa.html";
     }
 }
 

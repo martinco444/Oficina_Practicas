@@ -11,44 +11,6 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 	<link rel="icon" type="image/png" href="./img/logoLogin.png"/>
 	<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js'></script>
-    <script>
-
-document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
-  var calendar = new FullCalendar.Calendar(calendarEl, {
-    initialView: 'dayGridMonth',
-    editable: true, // Permite editar eventos
-    selectable: true, // Permite seleccionar fechas
-    select: function(arg) {
-      // Abre el formulario para agregar un evento cuando se selecciona una fecha
-      var startDate = arg.startStr;
-      var endDate = arg.endStr;
-      openAddEventForm(startDate, endDate);
-    },
-    events: [] // Puedes inicializar los eventos aquí o cargarlos desde una fuente externa
-  });
-  calendar.render();
-
-  // Manejador de envío de formulario para agregar eventos
-  document.getElementById('addEventForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    var eventName = document.getElementById('eventName').value;
-    var eventDate = document.getElementById('eventDate').value;
-    calendar.addEvent({ title: eventName, start: eventDate });
-    closeAddEventForm();
-  });
-});
-
-// Función para abrir el formulario de agregar evento
-function openAddEventForm(startDate, endDate) {
-  document.getElementById('eventDate').value = startDate;
-  document.getElementById('addEventForm').style.display = 'block';
-}
-
-
-
-    </script>
-
     <style>
 		#calendar {
 			width: 70%; /* Ancho del calendario */
@@ -109,11 +71,10 @@ function openAddEventForm(startDate, endDate) {
 			<a href="#"><img class="logo" src="./img/logoLogin.png" alt="Restaurant Logo"/></a>
 			<nav>
 				<ul>
-					<li><a href="indexprofesor.html">Inicio</a></li>
-					
-					<li><a href="./eventos.html">Eventos</a></li>
-					<li><a href="./historial.html">Historial</a></li>
-					<li><a href="./estudiantes.html">Estudiantes</a></li>
+					<li><a href="indexempresa.html">Inicio</a></li>
+					<li><a href="hojas_de_vidas.html">Hojas de vida</a></li>
+					<li><a href="formulario_aceptacion.html">Formulario de aceptación</a></li>
+					<li><a href="perfil_empresa.html">Perfil</a></li>
 				</ul>
 			</nav>
 		</header>
@@ -145,13 +106,12 @@ function openAddEventForm(startDate, endDate) {
 			<div class="rights">
 				<p>Oficina de practicas</p>
 			</div>
-
 			<nav>
 				<ul>
-					<li><a href="indexprofesor.html">Inicio</a></li>
-					<li><a href="./eventos.html">Eventos</a></li>
-					<li><a href="./historial.html">Historial</a></li>
-					<li><a href="./estudiantes.html">Estudiantes</a></li>
+                    <li><a href="indexempresa.html">Inicio</a></li>
+					<li><a href="hojas_de_vidas.html">Hojas de vida</a></li>
+					<li><a href="formulario_aceptacion.html">Formulario de aceptación</a></li>
+					<li><a href="perfil_empresa.html">Perfil</a></li>
 				</ul>
 			</nav>
 		</div>		

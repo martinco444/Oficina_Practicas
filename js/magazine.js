@@ -1,6 +1,3 @@
-/*
- * Magazine sample
-*/
 
 function addPage(page, book) {
 
