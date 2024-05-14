@@ -87,8 +87,10 @@ document.querySelector("#btnLogin").onclick = function(){
         else if (strPersona === "Profesor"){
             window.location.href = "indexprofesor.html";
         }
-        else if (strPersona === "Empresa")
-            window.location.href = "indexempresa.html";
+        else if (strPersona === "Empresa"){
+            window.location.href = "index_empresa.html";
+        }
+           
     }
 }
 
