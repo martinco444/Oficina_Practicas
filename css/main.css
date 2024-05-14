@@ -189,14 +189,6 @@ header.light nav ul li a:hover{
     color: #F66D02;
 }
 
-header.dark nav ul li a{  
-    color: #5d5d5d;
-    font-weight: bold;
-}
-
-header.dark nav ul li a:hover{
-    color: #919191;
-}
 
 
 

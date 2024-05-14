@@ -36,24 +36,10 @@
 
 }
 
-
-
-/*  General CSS*/
 body{
-    background: #fff;
+    background-color: #ffffff;
 }
 
-.wrapper{
-    width: 1100px;
-    margin: 0 auto;
-}
-            .images {
-                width: 40%;
-                height: 40%;
-                top: 10%;
-                left: 30%;
-                margin-top: 2em;
-            }
 
 h1, h2, h3, h4, h5 ,h6{
     color: #626262;
@@ -69,19 +55,16 @@ h6              { font-size: .75em; margin: 1.67em 0 }
 h1, h2, h3, h4,
 h5, h6          { font-weight: bolder }
 
-p {
-    font-family: "raleway-regular";
-}
-.clearfix:before,  
-.clearfix:after {  
-    content: " ";  
-    display: table;  
-}  
-.clearfix:after {  
-    clear: both;  
-}  
- 
 
+ 
+.container_header .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 65px;
+    margin-bottom: -1px;
+    background: url('../img/shadow.png') repeat-x;
+}
 
 .logo {
     width: 10%;
@@ -92,121 +75,26 @@ p {
 }
 
 
-/*    Billboard    */
-.billboard{
+.header{
     width: 100%;
-    height: 690px;
-    position: relative;
-}
+    height: 150px;
+    background-color: #412669; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 
-.billboard.light{
-    background: url('../img/hoja.png') no-repeat;   
-     
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-.billboard.dark{
-    background: url('../img/billboard2.jpg') no-repeat;
-    
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-
-.billboard .shadow{
-    position: absolute;
-    width: 100%;
-    height: 142px;
-    bottom: 0;
-    left: 0;
-    margin-bottom: -1px;
-    background: url('../img/shadow.png') repeat-x;
-}
-
-.billboard .caption{
-    margin-top: 130px;
-    text-align: center;
-}
-
-.billboard .caption.light{
-    color: #fff;
-}
-
-.billboard .caption.dark{
-    color: #5d5d5d;
-}
-
-.billboard .caption h1{
-    font-family: "raleway-bold";
-    font-size: 50px;
-    font-weight: bold; 
-    margin-bottom: 30px;
-}
-
-.billboard .caption.light h1{
-    color: #fff;
-}
-
-.billboard .caption.dark h1{
-    color: #5d5d5d;
-}
-
-.billboard .caption p{
-    font-family: "raleway-regular";
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.billboard .caption.light p{
-    color: #fff;
-}
-
-.billboard .caption.dark p{
-    color: #5d5d5d;
-}
-
-.billboard .caption hr{
-    display: inline-block;
-    height: 1px;
-    width: 30px;
-    border: 0!important;   
-    margin: 0;
-    padding: 0;
-}
-
-.billboard .caption.light hr{
-    background: #fff;
-}
-
-.billboard .caption.dark hr{
-    background: #5d5d5d;
-}
-
-
-
-
-
-
-/*    header    */
-header{
-    width: 100%;
-    height: 125px;
 }
 
 header .logo{
     float: left;
     margin-top: 25px;
-    width:17%;
+    width:9%;
+    margin-left: 30px;
+	
 }
 
 header nav{
     float: right;
-    margin-top: 80px;
+    margin-top: 55px;
+    margin-right: 100px;
 }
 
 
@@ -217,179 +105,18 @@ header nav ul li{
     margin-left: 50px;
 }
 
-header nav ul li a{
+header nav ul li a {
     text-decoration: none;  
-    font-family: "raleway-regular";
+    font-family: "raleway-bold";
     font-size: 14px;
-
-    transition:all .2s linear;
-    -webkit-transition:all .2s linear;
-    -moz-transition:all .2s linear;
-    -o-transition:all .2s linear;
+    transition: all .2s linear;
+    color: #000000;
+    font-weight: bold;
 }
 
-header.light nav ul li a{  
-    color: #fff;
-}
-
-header.light nav ul li a:hover{
+header nav ul li a:hover{
     color: #F66D02;
 }
-
-header.dark nav ul li a{  
-    color: #5d5d5d;
-}
-
-header.dark nav ul li a:hover{
-    color: #919191;
-}
-
-
-
-
-
-
-
-/*    Services    */
-.services ul{
-    margin-top: 100px;
-}
-
-.services ul li{
-    list-style: none;
-    display: block;
-    width: 313px;
-    float: left;
-    margin-left: 80px;
-    text-align: center;
-}
-
-.services ul li:first-child{
-    margin-left: 0;
-}
-
-.services ul li .separator{
-    display: block;
-    width: 1px;
-    height: 20px;
-    background: #f6f6f6;
-    margin: 20px auto;
-}
-
-.services ul li h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.services ul li p{
-   color: #838181;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    line-height: 28px; 
-    margin-top: 40px;
-    letter-spacing: .5px;
-}
-
-
-
-
-
-
-
-/*    Video    */
-.video{
-    display: block;
-    width: 100%;
-    height: 350px;
-    text-align: center;
-    margin-top: 100px;
-    background: url('../img/back2.jpg') no-repeat;    
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-.video .video_logo{
-    margin-top: 85px;
-}
-
-.video h3{
-    color: #fff;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    font-weight: normal!important;
-    margin: 20px 0 0 0;
-}
-
-.video #play_btn{
-    display: inline-block;
-    width: 71px;
-    height: 71px;
-    background: url('../img/play_btn.png') no-repeat;
-    margin-top: 40px;
-}
-
-
-
-
-.title{
-    text-align: center;
-    overflow: hidden;
-}
-
-.title h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0 0 20px 0;
-    text-transform: uppercase;
-}
-
-.title h3{
-    color: #9b9b9b;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    margin: 0 0 20px 0;
-    font-weight: normal!important;
-}
-
-.title hr.separator{
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: #ebebeb;
-    margin: 0 auto;
-    padding: 0;
-    border: 0!important;
-}
-
-
-
-.carousel{
-    margin-top: 100px;
-    padding: 100px 0;
-    background: #fafafa;
-}
-
-.carousel h1{
-    color: #616161;
-    font-family: "raleway-regular";
-    font-size: 16px;
-    font-weight: normal;
-    line-height: 26px;
-    margin: 20px 0 0 0;
-}
-
-
-
-
-
-
 
 /*    footer    */
 footer{
@@ -406,7 +133,7 @@ footer .rights p{
     color: #838181;
     font-family: "raleway-regular";
     font-size: 13px;
-    margin: px 0 0 40px; 
+    margin: 5px 0 0 40px; 
 }
 
 footer .rights p a{
@@ -435,12 +162,126 @@ footer nav ul li a{
     font-size: 13px;
     text-decoration: none;
 
-    transition:all .2s linear;
-    -webkit-transition:all .2s linear;
-    -moz-transition:all .2s linear;
-    -o-transition:all .2s linear;
 }
 
 footer nav ul li a:hover{
     color: #616161;
+}
+
+
+
+
+ #container p{
+    font-family: "raleway-bold";
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #914308;
+    margin-bottom: 16px;
+}
+
+
+/* Estilos curso */
+.wrapper{
+    width: 70%;
+    margin: 50px auto;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.curso h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.curso > div {
+    margin-bottom: 40px;
+}
+
+.circulo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #f66c02a6;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 20px;
+    float: left;
+}
+
+.task-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.task-item {
+    margin-bottom: 10px;
+}
+
+.task-item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.boton {
+    background-color: #412669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #F66D02;
+}
+
+
+/* Estilos adicionales para el formulario */
+.formulario {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    margin-top: 100px;
+}
+
+.formulario h2 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.formulario input[type="text"],
+.formulario input[type="date"],
+.formulario input[type="tel"],
+.formulario input[type="email"],
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.formulario textarea {
+    height: 100px;
+}
+
+.wrapper button {
+    display: block;
+    width: 20%;
+    padding: 12px;
+    background-color: #F66D02;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
