@@ -36,7 +36,9 @@
 
 }
 
-
+body{
+    background-color: #ffffff;
+}
 
 
 h1, h2, h3, h4, h5 ,h6{
@@ -76,7 +78,7 @@ h5, h6          { font-weight: bolder }
 .header{
     width: 100%;
     height: 150px;
-    background-color: #412669; 
+    background-color: #333; 
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 
 }
@@ -179,107 +181,55 @@ footer nav ul li a:hover{
 }
 
 
-/* Estilos curso */
-.wrapper{
-    width: 70%;
-    margin: 50px auto;
-    padding: 20px;
-    margin-top: 40px;
+.companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+	margin-bottom: 20px;
 }
 
-.curso h1 {
+.company {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.company:hover {
+    transform: translateY(-5px);
+}
+
+.company h2 {
+    margin-top: 0;
     font-size: 24px;
     color: #333;
-    margin-bottom: 20px;
-}
-
-.curso > div {
-    margin-bottom: 40px;
-}
-
-.circulo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #f66c02a6;
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    margin-right: 20px;
-    float: left;
-}
-
-.task-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.task-item {
     margin-bottom: 10px;
 }
 
-.task-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.boton {
-    background-color: #412669;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.boton:hover {
-    background-color: #F66D02;
-}
-
-
-/* Estilos adicionales para el formulario */
-.formulario {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 8px;
-    margin-top: 100px;
-}
-
-.formulario h2 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.formulario input[type="text"],
-.formulario input[type="date"],
-.formulario input[type="tel"],
-.formulario input[type="email"],
-.formulario textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-.formulario textarea {
-    height: 100px;
-}
-
-.wrapper button {
+.read-more {
     display: block;
-    width: 20%;
-    padding: 12px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: #F66D02;
+			font-weight: bold;
+			text-decoration: underline;
+			margin-top: 10px;
+}
+
+.accept-btn {
+    padding: 10px 20px;
     background-color: #F66D02;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.accept-btn:hover {
+    background-color: #412669;
 }

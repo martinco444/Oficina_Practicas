@@ -43,10 +43,6 @@ body{
     background: #fff;
 }
 
-.wrapper{
-    width: 1100px;
-    margin: 0 auto;
-}
 
 h1, h2, h3, h4, h5 ,h6{
     color: #626262;
@@ -65,6 +61,16 @@ h5, h6          { font-weight: bolder }
 
 
 
+
+.container_header .shadow{
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: 65px;
+    margin-bottom: -1px;
+    background: url('../img/shadow.png') repeat-x;
+}
+
 .logo {
     width: 10%;
 }
@@ -74,97 +80,26 @@ h5, h6          { font-weight: bolder }
 }
 
 
-/*    Billboard    */
-.billboard{
+.header{
     width: 100%;
-    height: 690px;
-    position: relative;
-}
+    height: 150px;
+    background-color: #F66D02; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 
-.billboard.light{
-    background: url('../img/moradolila.jpg') no-repeat;   
-     
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-
-.billboard .shadow{
-    position: absolute;
-    width: 100%;
-    height: 142px;
-    bottom: 0;
-    left: 0;
-    margin-bottom: -1px;
-    background: url('../img/shadow.png') repeat-x;
-}
-
-.billboard .caption{
-    margin-top: 130px;
-    text-align: center;
-}
-
-.billboard .caption.light{
-    color: #fff;
-}
-
-
-
-.billboard .caption h1{
-    font-family: "raleway-bold";
-    font-size: 50px;
-    font-weight: bold; 
-    margin-bottom: 30px;
-}
-
-.billboard .caption.light h1{
-    color: #fff;
-}
-
-
-.billboard .caption p{
-    font-family: "raleway-regular";
-    font-size: 18px;
-    margin-bottom: 30px;
-}
-
-.billboard .caption.light p{
-    color: #fff;
-}
-
-
-.billboard .caption hr{
-    display: inline-block;
-    height: 1px;
-    width: 30px;
-    border: 0!important;   
-    margin: 0;
-    padding: 0;
-}
-
-.billboard .caption.light hr{
-    background: #fff;
-}
-
-
-
-/*    header    */
-header{
-    width: 100%;
-    height: 125px;
 }
 
 header .logo{
     float: left;
     margin-top: 25px;
-    width:17%;
+    width:9%;
+    margin-left: 30px;
+	
 }
 
 header nav{
     float: right;
-    margin-top: 80px;
+    margin-top: 55px;
+    margin-right: 100px;
 }
 
 
@@ -175,27 +110,17 @@ header nav ul li{
     margin-left: 50px;
 }
 
-header nav ul li a{
+header nav ul li a {
     text-decoration: none;  
-    font-family: "raleway-regular";
+    font-family: "raleway-bold";
     font-size: 14px;
-
+    transition: all .2s linear;
+    color: #ffffff;
+    font-weight: bold;
 }
 
-header.light nav ul li a{  
-    color: #fff;
-}
-
-header.light nav ul li a:hover{
-    color: #B9B9B9;
-}
-
-header.dark nav ul li a{  
-    color: #5d5d5d;
-}
-
-header.dark nav ul li a:hover{
-    color: #919191;
+header nav ul li a:hover{
+    color: #412669;
 }
 
 
