@@ -38,29 +38,11 @@
 }
 
 
-/*  General CSS*/
-body{
-    background: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-
-h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
-    font-family: "raleway-regular", arial;
-    letter-spacing: 1px;
-}
-
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
-
-
-
-
 
 .container_header .shadow{
     position: absolute;
@@ -116,98 +98,7 @@ header nav ul li a:hover{
 }
 
 
-/*    Services    */
-.services ul{
-    margin-top: 100px;
-}
 
-.services ul li{
-    list-style: none;
-    float: left;
-    margin-left: 80px;
-    text-align: center;
-}
-
-.services ul li:first-child{
-    margin-left: 0;
-}
-
-.services ul li .separator{
-    display: block;
-    width: 1px;
-    height: 20px;
-    background: #f6f6f6;
-    margin: 20px auto;
-}
-
-.services ul li h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.services ul li p{
-   color: #838181;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    line-height: 28px; 
-    margin-top: 40px;
-    letter-spacing: .5px;
-}
-
-
-
-/*    Video    */
-.video{
-    display: block;
-    width: 100%;
-    padding: 2em;
-    text-align: center;
-    margin-top: 100px;
-    background: url('../img/contact.jpg') no-repeat;    
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-
-.title{
-    text-align: center;
-    overflow: hidden;
-}
-
-.title h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0 0 20px 0;
-    text-transform: uppercase;
-}
-
-.title h3{
-    color: #9b9b9b;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    margin: 0 0 20px 0;
-    font-weight: normal!important;
-}
-
-.title hr.separator{
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: #ebebeb;
-    margin: 0 auto;
-    padding: 0;
-    border: 0!important;
-}
-
-
-/*    footer    */
 footer{
     padding: 35px 0;
     overflow: hidden;
@@ -255,4 +146,117 @@ footer nav ul li a{
 
 footer nav ul li a:hover{
     color: #616161;
+}
+
+
+
+
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.profile-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-image-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none;
+}
+
+.profile-image-container .add-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    color: #ffffffb4;
+}
+
+.profile-image-container input[type="file"] {
+    display: none;
+}
+
+.profile-container h2 {
+    font-size: 1.5em;
+    margin-top: 0;
+    border-bottom: 2px solid #7e1178;
+    padding-bottom: 5px;
+    color: #333333;
+    margin-bottom: 15px;
+    font-family: "raleway-semibold";
+}
+
+.info-group {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.info-group p {
+    margin: 0;
+    font-size: 14px;
+    width: 100%;
+    font-family: "raleway-regular";
+}
+
+.info-group i {
+    margin-right: 10px;
+    color: #333333;
+
+}
+
+.info-group input[type="text"],
+.info-group input[type="email"],
+.info-group input[type="tel"],
+.info-group input[type="date"],
+.info-group textarea {
+    display: none;
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-family: "raleway-regular";
+}
+
+.edit-mode {
+    display: none;
+
+}
+
+button {
+    background: #7e1178;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #F66D02;
 }

@@ -45,10 +45,6 @@
 }
 
 
-
-
-
-
 .container_header .shadow{
     position: absolute;
     width: 100%;
@@ -105,9 +101,6 @@ header nav ul li a:hover{
 
 
 
-
-
-
 footer{
     padding: 35px 0;
     overflow: hidden;
@@ -155,4 +148,50 @@ footer nav ul li a{
 
 footer nav ul li a:hover{
     color: #616161;
+}
+
+
+.form-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+}
+.form-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+.form-container label {
+    font-family: 'raleway-bold';
+    src: url('../fonts/raleway-bold.eot');
+    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/raleway-bold.woff') format('woff'),
+        url('../fonts/raleway-bold.ttf') format('truetype'),
+        url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+}
+.form-container input[type="file"] {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #412669;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.form-container input[type="submit"]:hover {
+    background-color: #F66D02;
 }
