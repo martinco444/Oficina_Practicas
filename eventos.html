@@ -4,96 +4,28 @@
 <title>Curso</title>
 <meta name="viewport" content="width = 1050, user-scalable = no" />
 <link rel="icon" type="image/png" href="./img/logoLogin.png"/>
-<link rel="stylesheet" type="text/css" href="css/menu.css">
+<link rel="stylesheet" type="text/css" href="css/eventos.css">
 </head>
-<style>
-/* Estilos para el formulario de eventos */
-#addEventForm {
-    font-family: 'raleway-bold';
-    src: url('../fonts/raleway-bold.eot');
-    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-bold.woff') format('woff'),
-         url('../fonts/raleway-bold.ttf') format('truetype'),
-         url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    width: 70%;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    margin-bottom: 65px;
-    font-size: 14px;
-}
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
-.form-group label {
-    font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="date"],
-.form-group input[type="datetime-local"],
-.form-group input[type="time"],
-.form-group input[type="email"],
-.form-group input[type="number"],
-.form-group input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 13px;
-}
-
-button[type="submit"] {
-    width: 25%;
-    padding: 10px;
-    margin-top: 10px;
-    background-color: #914308;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    float: right;
-}
-
-button[type="submit"]:hover {
-    background-color: #F66D02;
-}
-
-</style>
 <body>
-	<section class="billboard light">
-		<header class="wrapper light">
-			<a href="#"><img class="logo" src="./img/logo.png" alt="Restaurant Logo"/></a>
-			<nav>
-				<ul>
-					<li><a href="./indexprofesor.html">Inicio</a></li>
+    <section class="container_header">
+        <header class="header">
+            <a href="#"><img class="logo" src="./img/logo.png" alt="Beijing Chinese Restaurant Logo"/></a>
+            <nav>
+                <ul>
+                    <li><a href="./indexprofesor.html">Inicio</a></li>
 					
-					<li><a href="#">Evento</a></li>
-					<li><a href="./historial.html">Historial</a></li>
-					<li><a href="./estudiantes.html">Estudiantes</a></li>
-				</ul>
-			</nav>
-		</header>
+                    <li><a href="./eventos.html">Evento</a></li>
+                    <li><a href="./historial.html">Historial</a></li>
+                    <li><a href="./estudiantes.html">Estudiantes</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="shadow"></div>
+    </section>
 
-		<div class="caption light animated wow fadeInDown clearfix">
-			<h1>Eventos</h1>
-			<hr>
-		</div>
-		<div class="shadow"></div>
-	</section><!--  End billboard  -->
-
-    <div id="container">
-		<p style="text-align: center;">Crear evento nuevo</p>
-	</div>
-
+    <div class="container">
+		<h1>Crear evento nuevo</h1>
     <form id="addEventForm">
         <div class="form-group">
             <label for="eventName">Título del Evento:</label>
@@ -117,7 +49,7 @@ button[type="submit"]:hover {
         </div>
         <button type="submit">Agregar Evento</button>
     </form>
-
+    </div>
 <footer>
 	<div class="wrapper">
 		<div class="rights">
