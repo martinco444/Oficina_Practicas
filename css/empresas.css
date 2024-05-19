@@ -36,24 +36,11 @@
 
 }
 
-body{
-    background-color: #ffffff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-
-
-h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
-    font-family: "raleway-regular", arial;
-    letter-spacing: 1px;
-}
-
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
 
 
  
@@ -66,27 +53,24 @@ h5, h6          { font-weight: bolder }
     background: url('../img/shadow.png') repeat-x;
 }
 
-.logo {
-    width: 10%;
-}
 
-.icon {
-    border-radius: 30px;
-}
+
+
+
 
 
 .header{
     width: 100%;
     height: 150px;
-    background-color: #333; 
+    background-color: #999898; 
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-
+    margin-bottom: 0;
 }
 
 header .logo{
     float: left;
     margin-top: 25px;
-    width:9%;
+    width:8.82%;
     margin-left: 30px;
 	
 }
@@ -118,10 +102,12 @@ header nav ul li a:hover{
     color: #F66D02;
 }
 
-/*    footer    */
 footer{
     padding: 35px 0;
-    overflow: hidden;
+    z-index: 1000;
+    position: relative; 
+    margin-top: auto; 
+    padding: 20px;
 }
 
 footer .footer_logo{
@@ -133,7 +119,6 @@ footer .rights p{
     color: #838181;
     font-family: "raleway-regular";
     font-size: 13px;
-    margin: 5px 0 0 40px; 
 }
 
 footer .rights p a{
@@ -168,68 +153,59 @@ footer nav ul li a:hover{
     color: #616161;
 }
 
-
-
-
- #container p{
-    font-family: "raleway-bold";
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #914308;
-    margin-bottom: 16px;
-}
-
-
-.companies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.company {
-    width: 300px;
-    margin: 20px;
+.companies{
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background: #ffffff;
 }
 
-.company:hover {
-    transform: translateY(-5px);
+.companies h1{
+    font-family: "raleway-semibold";
+    font-size: 25px;
+    color: #333333;
 }
 
-.company h2 {
-    margin-top: 0;
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+ .company {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    justify-content: space-between; 
+    padding: 10px;
+    padding-left: 16px;
+}
+
+.company p{
+    font-family: "raleway-bold";
+    color: #2F2F2F;
+    font-size: 18px;
 }
 
 .read-more {
-    display: block;
-    margin-bottom: 10px;
     text-decoration: none;
-    color: #F66D02;
-			font-weight: bold;
-			text-decoration: underline;
-			margin-top: 10px;
+    color: #F66D02; 
+    margin-right: 10px;
+    font-family: "raleway-semibold";
+    font-size: 14px;
+}
+
+.read-more:hover{
+    color:#412669 ;
 }
 
 .accept-btn {
-    padding: 10px 20px;
-    background-color: #F66D02;
+    background-color: #28a745; 
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50%; 
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    width: 25px;
+    height: 25px;
 }
 
-.accept-btn:hover {
-    background-color: #412669;
+.accept-btn::after {
+    content: '✔';
 }

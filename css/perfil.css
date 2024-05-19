@@ -71,14 +71,6 @@ h5, h6          { font-weight: bolder }
     background: url('../img/shadow.png') repeat-x;
 }
 
-.logo {
-    width: 10%;
-}
-
-.icon {
-    border-radius: 30px;
-}
-
 
 .header{
     width: 100%;

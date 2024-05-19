@@ -38,24 +38,12 @@
 }
 
 
-body{
-    background: #fff;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-
-h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
-    font-family: "raleway-regular", arial;
-    letter-spacing: 1px;
-}
-
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
 
 
 
@@ -70,13 +58,6 @@ h5, h6          { font-weight: bolder }
     background: url('../img/shadow.png') repeat-x;
 }
 
-.logo {
-    width: 10%;
-}
-
-.icon {
-    border-radius: 30px;
-}
 
 
 .header{
@@ -123,94 +104,8 @@ header nav ul li a:hover{
 }
 
 
-/*    Services    */
-.services ul{
-    margin-top: 100px;
-}
-
-.services ul li{
-    list-style: none;
-    float: left;
-    margin-left: 80px;
-    text-align: center;
-}
-
-.services ul li:first-child{
-    margin-left: 0;
-}
-
-.services ul li .separator{
-    display: block;
-    width: 1px;
-    height: 20px;
-    background: #f6f6f6;
-    margin: 20px auto;
-}
-
-.services ul li h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 18px;
-    font-weight: bold;
-    margin: 0;
-}
-
-.services ul li p{
-   color: #838181;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    line-height: 28px; 
-    margin-top: 40px;
-    letter-spacing: .5px;
-}
 
 
-
-.video{
-    display: block;
-    width: 100%;
-    padding: 2em;
-    text-align: center;
-    margin-top: 100px;
-    background: url('../img/contact.jpg') no-repeat;    
-    background-size: cover;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-}
-
-
-.title{
-    text-align: center;
-    overflow: hidden;
-}
-
-.title h2{
-    color: #616161;
-    font-family: "raleway-bold";
-    font-size: 30px;
-    font-weight: bold;
-    margin: 0 0 20px 0;
-    text-transform: uppercase;
-}
-
-.title h3{
-    color: #9b9b9b;
-    font-family: "raleway-regular";
-    font-size: 14px;
-    margin: 0 0 20px 0;
-    font-weight: normal!important;
-}
-
-.title hr.separator{
-    display: block;
-    width: 40px;
-    height: 1px;
-    background-color: #ebebeb;
-    margin: 0 auto;
-    padding: 0;
-    border: 0!important;
-}
 
 
 footer{
