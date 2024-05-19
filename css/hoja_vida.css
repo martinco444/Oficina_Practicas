@@ -1,4 +1,4 @@
-
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 /*  Fonts  */
 @font-face {
     font-family: 'raleway-regular';
@@ -33,28 +33,15 @@
          url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
     font-weight: normal;
     font-style: normal;
-
 }
 
 
-
-
-h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
-    font-family: "raleway-regular", arial;
-    letter-spacing: 1px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
-
-
- 
 .container_header .shadow{
     position: absolute;
     width: 100%;
@@ -78,13 +65,13 @@ h5, h6          { font-weight: bolder }
     height: 150px;
     background-color: #412669; 
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
-
+    margin-bottom: 0;
 }
 
 header .logo{
     float: left;
     margin-top: 25px;
-    width:9%;
+    width:8.85%;
     margin-left: 30px;
 	
 }
@@ -115,6 +102,8 @@ header nav ul li a {
 header nav ul li a:hover{
     color: #F66D02;
 }
+
+
 
 /*    footer    */
 footer{
@@ -167,91 +156,34 @@ footer nav ul li a:hover{
 }
 
 
-
-
- #container p{
-    font-family: "raleway-bold";
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #914308;
-    margin-bottom: 16px;
-}
-
-
-/* Estilos curso */
-.wrapper{
-    width: 70%;
-    margin: 50px auto;
+.hojaDeVida{
+    max-width: 1200px;
+    margin: 20px auto;
     padding: 20px;
-    margin-top: 40px;
+    background: #ffffff;
+    display: flex;
 }
 
-.curso h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
+.hojaDeVida h1{
+    margin-top: 0;
+    font-family: "raleway-semibold";
+    font-size: 25px;
+    color: #333333;
+    margin-bottom: 35px;
 }
 
-.curso > div {
-    margin-bottom: 40px;
-}
-
-.circulo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #f66c02a6;
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    margin-right: 20px;
-    float: left;
-}
-
-.task-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.task-item {
-    margin-bottom: 10px;
-}
-
-.task-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.boton {
-    background-color: #412669;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.boton:hover {
-    background-color: #F66D02;
-}
-
-
-/* Estilos adicionales para el formulario */
 .formulario {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 8px;
-    margin-top: 100px;
+    flex: 1;
+    margin-right: 20px; /* Espacio entre las columnas */
 }
 
 .formulario h2 {
+    font-family: "raleway-semibold";
     margin-bottom: 10px;
-    color: #333;
 }
 
 .formulario input[type="text"],
@@ -266,15 +198,18 @@ footer nav ul li a:hover{
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
+    font-family: "raleway-regular";
 }
 
 .formulario textarea {
     height: 100px;
+    font-family: "raleway-regular";
 }
 
-.wrapper button {
+.hojaDeVida button {
+    margin-top: 15px;
     display: block;
-    width: 20%;
+    width: 50%;
     padding: 12px;
     background-color: #F66D02;
     color: white;
@@ -282,4 +217,76 @@ footer nav ul li a:hover{
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    font-family: "raleway-regular";
+}
+
+.pre{
+    flex: 1;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #ffffff;
+}
+.pre h2{
+    font-family: "raleway-semibold";
+    color: #333333;
+    font-size: 25px;
+    margin-bottom: 35px;
+}
+.previsualizacion {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    font-family: "raleway-regular";
+    font-size: 13px;
+}
+
+.previsualizacion h2 {
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+    font-family: "raleway-semibold";
+    font-size: 17px;
+    
+}
+
+.previsualizacion p {
+    font-size: 15px;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.previsualizacion p strong {
+    color: #222;
+}
+
+.previsualizacion p:last-child {
+    margin-bottom: 0;
+}
+.previsualizacion #vistaPrevia {
+    max-width: 30%; 
+    height: auto; 
+    margin-bottom: 20px; 
+}
+
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-family: "raleway-regular";
+    font-size: 15px;
+}
+
+input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+    font-family: "raleway-regular";
+    font-size: 13px;
 }
