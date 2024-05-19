@@ -1,3 +1,4 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 /*  Fonts  */
 @font-face {
@@ -38,23 +39,13 @@
 
 
 
-
-h1, h2, h3, h4, h5 ,h6{
-    color: #626262;
-    font-family: "raleway-regular", arial;
-    letter-spacing: 1px;
+/* reset.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1              { font-size: 2em; margin: .67em 0 }
-h2              { font-size: 1.5em; margin: .75em 0 }
-h3              { font-size: 1.17em; margin: .83em 0 }
-h5              { font-size: .83em; margin: 1.5em 0 }
-h6              { font-size: .75em; margin: 1.67em 0 }
-h1, h2, h3, h4,
-h5, h6          { font-weight: bolder }
-
-
- 
 .container_header .shadow{
     position: absolute;
     width: 100%;
@@ -84,7 +75,7 @@ h5, h6          { font-weight: bolder }
 header .logo{
     float: left;
     margin-top: 25px;
-    width:9%;
+    width:8.85%;
     margin-left: 30px;
 	
 }
@@ -118,13 +109,108 @@ header nav ul li a:hover{
 
 
 
+.curso {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+.curso h1{
+    font-family: "raleway-semibold",arial;
+    font-size: 25px;
+    color: #333333;
+}
 
+.curso h2{
+    font-family: "raleway-semibold";
+    margin-bottom: 10px;
+}
 
+.circulo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-family: "raleway-bold";
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+}
 
+.circulo::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 111, 0, 0.438); /* Color con menos opacidad */
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    transition: border-color 0.3s ease;
+}
 
+.circulo[data-progreso="1"]::before {
+    border-color: rgba(255, 150, 70, 0.6);
+}
 
-/*    footer    */
+.circulo[data-progreso="2"]::before {
+    border-color: rgba(255, 150, 70, 0.9);
+}
+
+.circulo[data-progreso="3"]::before {
+    border-color: #F66D02; /* Color oscuro */
+}
+
+.task-list {
+    list-style: none;
+    padding-left: 0;
+ 
+}
+
+.task-item {
+    margin-bottom: 10px;
+}
+
+.task-link {
+    text-decoration: none;
+    color: #333333;
+    font-family: "raleway-regular";
+    font-size: 14px;
+}
+
+.task-link:hover {
+    text-decoration: underline;
+}
+
+.subtarea {
+    margin-top: 10px;
+}
+
+.boton {
+    background: #412669;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-family: "raleway-regular";
+    font-size: 13px;
+}
+
+.boton:hover {
+    background: #220e3f;
+}
+
 footer{
     padding: 35px 0;
     overflow: hidden;
@@ -172,77 +258,4 @@ footer nav ul li a{
 
 footer nav ul li a:hover{
     color: #616161;
-}
-
-
-
-
- #container p{
-    font-family: "raleway-bold";
-    font-size: 40px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #914308;
-    margin-bottom: 16px;
-}
-
-
-/* Estilos curso */
-.curso {
-    width: 70%;
-    margin: 50px auto;
-    padding: 20px;
-    margin-top: 40px;
-}
-
-.curso h1 {
-    font-size: 24px;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.curso > div {
-    margin-bottom: 40px;
-}
-
-.circulo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #f66c02a6;
-    color: #fff;
-    margin-bottom: 20px;
-    font-size: 18px;
-    font-weight: bold;
-    line-height: 60px;
-    text-align: center;
-    margin-right: 20px;
-    float: left;
-}
-
-.task-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-.task-item {
-    margin-bottom: 10px;
-}
-
-.task-item input[type="checkbox"] {
-    margin-right: 10px;
-}
-
-.boton {
-    background-color: #412669;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.boton:hover {
-    background-color: #F66D02;
 }
