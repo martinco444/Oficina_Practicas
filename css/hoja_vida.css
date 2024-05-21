@@ -163,6 +163,12 @@ footer nav ul li a:hover{
     background: #ffffff;
     display: flex;
 }
+#addEventForm{
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff; 
+}
 
 .hojaDeVida h1{
     margin-top: 0;

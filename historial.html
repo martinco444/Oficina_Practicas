@@ -5,148 +5,79 @@
     <meta charset="utf-8">
     <meta name="author" content="pixelhint.com">
     <meta name="description" content="Sublime Stunning free HTML5/CSS3 website template"/>
-    <link rel="stylesheet" type="text/css" href="./css/reset.css">
-    <link rel="stylesheet" type="text/css" href="./css/animate.css">
-    <link rel="stylesheet" type="text/css" href="./css/hoja_vida.css">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/empresas.css">
     <link rel="icon" type="image/png" href="./img/logoLogin.png"/>
 </head>
-<style>
-	/* Estilos para el formulario de eventos en el historial */
-#addEventForm {
-    font-family: 'raleway-bold';
-    src: url('../fonts/raleway-bold.eot');
-    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
-         url('../fonts/raleway-bold.woff') format('woff'),
-         url('../fonts/raleway-bold.ttf') format('truetype'),
-         url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 20px;
-    padding: 20px;
-    margin-bottom: 65px;
-    font-size: 14px;
-}
-
-/* Estilos para los elementos del formulario */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.form-group input[type="text"],
-.form-group input[type="datetime-local"]{
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 14px;
-}
-.form-group textarea {
-    width: 100%;
-    height: 150px;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 16px;
-}
-
-/* Estilos para el botón */
-#addEventForm button[type="submit"] {
-    width: 25%; /* Ancho automático para adaptarse al contenido */
-    padding: 8px 20px; /* Ajusta el padding para hacer el botón más pequeño */
-    margin-top: 10px;
-    background-color: #412669;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    float: right; /* Alinea el botón a la derecha */
-    font-size: 14px;
-}
-
-#addEventForm button[type="submit"]:hover {
-    background-color: #7D2076;
-}
-
-</style>
 <body>
-
     <section class="container_header">
-        <header class="header">
+        <header style="background-color: #412669;" class="header">
             <a href="#"><img class="logo" src="./img/logo4.png" alt="Beijing Chinese Restaurant Logo"/></a>
             <nav>
                 <ul>
                     <li><a href="./indexprofesor.html">Inicio</a></li>
-					
                     <li><a href="./eventos.html">Evento</a></li>
                     <li><a href="./historial.html">Historial</a></li>
                     <li><a href="./estudiantes.html">Estudiantes</a></li>
                 </ul>
             </nav>
         </header>
-
         <div class="shadow"></div>
     </section>
 
-    <form id="addEventForm">
-        <div class="form-group">
-            <label for="eventName">Título del Evento:</label>
-            <input type="text" id="eventName" placeholder="Nombre del evento" required>
+    <section class="companies">
+        <h1>Historial de reuniones</h1>
+        <div class="company">
+                <p>Reunion meet 25/03/2024</p>
+                <div>
+                    <a href="./editarhistorial.html" class="read-more">Editar</a>
+                </div>
         </div>
-        <div class="form-group">
-            <label for="eventName">Profesor:</label>
-            <input type="text" id="eventName" placeholder="Nombre del evento" required>
-        </div>
-        <div class="form-group">
-            <label for="eventName">Razon:</label>
-            <input type="text" id="eventName" placeholder="Nombre del evento" required>
-        </div>
-        <div class="form-group">
-            <label for="eventName">Participantes:</label>
-            <input type="text" id="eventName" placeholder="Nombre del evento" required>
-        </div>
-        <div class="form-group">
-            <label for="eventDate">Fecha y Hora del Evento:</label>
-            <input type="datetime-local" id="eventDate" required>
-        </div>
-        <div class="form-group">
-            <label for="eventDate">Fecha y Hora del Evento:</label>
-            <textarea type="text" id="eventResumen" placeholder="Resumen" required></textarea>
-        </div>
-        <button type="submit">Guardar</button>
-    </form>
 
-		
-   
-    <script type="text/javascript" src="./js/main.js"></script>
-    <script type="text/javascript" src="./slick/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-<footer>
-	<div class="wrapper">
-		<div class="rights">
-			<p>Oficina de practicas</p>
-		</div>
+        <div class="company">
+            <p>Reunion meet 25/03/2024</p>
+            <div>
+                <a href="./editarhistorial.html" class="read-more">Editar</a>
+            </div>
+        </div>
 
-		<nav>
-			<ul>
-				<li><a href="./indexprofesor.html">Inicio</a></li>
-				<li><a href="eventos.html">Evento</a></li>
-				<li><a href="./historial.html">Historial</a></li>
-				<li><a href="./estudiantes.html">Estudiantes</a></li>
-			</ul>
-		</nav>
-	</div>		
-</footer>
+        <div class="company">
+            <p>Reunion meet 25/03/2024</p>
+            <div>
+                <a href="./editarhistorial.html" class="read-more">Editar</a>
+            </div>
+        </div>
+        
+        <div class="company">
+            <p>Reunion meet 25/03/2024</p>
+            <div>
+                <a href="./editarhistorial.html" class="read-more">Editar</a>
+            </div>
+        </div>
+
+    </section> 
+
+    <footer>
+        <div class="wrapper">
+            <div class="rights">
+                <p>Oficina de prácticas</p>
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    
+                    <li><a href="./curso.html">Curso</a></li>
+                    <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+                    <li><a href="./empresas.html">Empresas</a></li>
+                    <li><a href="./mis_documentos.html">Mis documentos</a></li>
+                    <li><a href="./profile.html">Perfil</a></li>
+                </ul>
+            </nav>
+        </div>      
+    </footer>
+
 </body>
 </html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Historial</title>
+    <meta charset="utf-8">
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="Sublime Stunning free HTML5/CSS3 website template"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
+    <link rel="stylesheet" type="text/css" href="./css/animate.css">
+    <link rel="stylesheet" type="text/css" href="./css/hoja_vida.css">
+    <link rel="icon" type="image/png" href="./img/logoLogin.png"/>
+</head>
+<style>
+#addEventForm h1{
+    font-family: "raleway-semibold";
+    font-size: 25px;
+    margin-bottom: 35px;
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-group textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#addEventForm button[type="submit"] {
+    width: 25%; 
+    padding: 8px 20px; 
+    margin-top: 10px;
+    background-color: #412669;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right; 
+    font-size: 14px;
+}
+
+#addEventForm button[type="submit"]:hover {
+    background-color: #7D2076;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
+
+.back-button-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-family: "raleway-regular";
+}
+
+.back-button-container a i {
+    margin-right: 5px;
+}
+
+</style>
+<body>
+
+    <section class="container_header">
+        <header class="header">
+            <a href="./indexprofesor.html"><img class="logo" src="./img/logo4.png" alt="Beijing Chinese Restaurant Logo"/></a>
+            <nav>
+                <ul>
+                    <li><a href="./indexprofesor.html">Inicio</a></li>
+                    <li><a href="./eventos.html">Evento</a></li>
+                    <li><a href="./historial.html">Historial</a></li>
+                    <li><a href="./estudiantes.html">Estudiantes</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="shadow"></div>
+    </section>
+
+    <div class="back-button-container">
+        <a href="./historial.html">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+    </div>
+
+    <form id="addEventForm">
+        <h1>Historial de eventos</h1>
+        <div class="form-group">
+            <label for="eventName">Título del Evento:</label>
+            <input type="text" id="eventName" placeholder="Nombre del evento" required>
+        </div>
+        <div class="form-group">
+            <label for="eventName">Profesor:</label>
+            <input type="text" id="eventName" placeholder="Nombre del evento" required>
+        </div>
+        <div class="form-group">
+            <label for="eventName">Razon:</label>
+            <input type="text" id="eventName" placeholder="Nombre del evento" required>
+        </div>
+        <div class="form-group">
+            <label for="eventName">Participantes:</label>
+            <input type="text" id="eventName" placeholder="Nombre del evento" required>
+        </div>
+        <div class="form-group">
+            <label for="eventDate">Fecha y Hora del Evento:</label>
+            <input type="datetime-local" id="eventDate" required>
+        </div>
+        <div class="form-group">
+            <label for="eventDate">Fecha y Hora del Evento:</label>
+            <textarea type="text" id="eventResumen" placeholder="Resumen" required></textarea>
+        </div>
+        <button type="submit">Guardar</button>
+    </form>
+
+		
+   
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./slick/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<footer>
+	<div class="wrapper">
+		<div class="rights">
+			<p>Oficina de practicas</p>
+		</div>
+
+		<nav>
+			<ul>
+				<li><a href="./indexprofesor.html">Inicio</a></li>
+				<li><a href="eventos.html">Evento</a></li>
+				<li><a href="./historial.html">Historial</a></li>
+				<li><a href="./estudiantes.html">Estudiantes</a></li>
+			</ul>
+		</nav>
+	</div>		
+</footer>
+</body>
+</html>
