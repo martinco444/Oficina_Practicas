@@ -153,14 +153,14 @@ footer nav ul li a:hover{
     color: #616161;
 }
 
-.companies{
+.companies {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background: #ffffff;
 }
 
-.companies h1{
+.companies  h1{
     font-family: "raleway-semibold";
     font-size: 25px;
     color: #333333;
@@ -178,7 +178,7 @@ footer nav ul li a:hover{
     padding-left: 16px;
 }
 
-.company p{
+.company  p{
     font-family: "raleway-regular";
     color: #2F2F2F;
     font-size: 18px;
@@ -208,4 +208,35 @@ footer nav ul li a:hover{
 
 .accept-btn::after {
     content: '✔';
+}
+
+.students {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.students  h1{
+    font-family: "raleway-semibold";
+    font-size: 25px;
+    color: #333333;
+}
+
+ .student {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 25px;
+    border-bottom: 1px solid #333;
+    font-size: 14px;
+    justify-content: space-between; 
+    padding: 10px;
+    padding-left: 16px;
+}
+
+.student p{
+    font-family: "raleway-regular";
+    color: #2F2F2F;
+    font-size: 18px;
 }

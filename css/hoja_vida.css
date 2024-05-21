@@ -184,7 +184,7 @@ footer nav ul li a:hover{
     background-color: #ffffff;
     border-radius: 8px;
     flex: 1;
-    margin-right: 20px; /* Espacio entre las columnas */
+    margin-right: 20px; 
 }
 
 .formulario h2 {
@@ -295,4 +295,81 @@ input[type="file"] {
     margin-bottom: 10px;
     font-family: "raleway-regular";
     font-size: 13px;
+}
+
+
+/*----Editar Historial-----*/
+
+#addEventForm h1{
+    font-family: "raleway-semibold";
+    font-size: 25px;
+    margin-bottom: 35px;
+    color: #333333;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="datetime-local"]{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+.form-group textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#addEventForm button[type="submit"] {
+    width: 25%; 
+    padding: 8px 20px; 
+    margin-top: 10px;
+    background-color: #412669;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    float: right; 
+    font-size: 14px;
+}
+
+#addEventForm button[type="submit"]:hover {
+    background-color: #7D2076;
+}
+
+.back-button-container {
+    position: absolute;
+    top: 150px;
+    left: 10px;
+}
+
+.back-button-container a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333333;
+    font-size: 14px;
+    font-family: "raleway-regular";
+}
+
+.back-button-container a i {
+    margin-left: 15px;
 }
