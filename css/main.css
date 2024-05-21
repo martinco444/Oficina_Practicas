@@ -188,6 +188,7 @@ header.light nav ul li a:hover{
 }
 
 
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -210,18 +211,13 @@ header.light nav ul li a:hover{
     display: block;
 }
 
-.header .dropdown-content a:hover {
+.dropdown-content a:hover {
     background-color: #f1f1f1;
 }
 
-.dropdown:hover .dropdown-content {
+.show {
     display: block;
 }
-
-.header .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
-
 
 .video{
     display: block;
