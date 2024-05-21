@@ -224,7 +224,7 @@ footer nav ul li a:hover{
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    margin-top: 25px;
+    margin-top: 10px;
     border-bottom: 1px solid #333;
     font-size: 14px;
     justify-content: space-between; 
@@ -236,4 +236,30 @@ footer nav ul li a:hover{
     font-family: "raleway-regular";
     color: #2F2F2F;
     font-size: 18px;
+}
+
+
+
+.filter {
+    padding: 20px;
+}
+
+.filter label {
+    margin-right: 10px;
+    font-family: "raleway-regular"
+}
+
+.filter select {
+    padding: 8px 16px;
+    font-size: 16px;
+    border: 1px solid #412669;
+    border-radius: 5px;
+    background-color: #ffffff;
+    transition: border-color 0.3s;
+}
+
+.filter select:hover,
+.filter select:focus {
+    border-color: #F66D02;
+    outline: none;
 }
