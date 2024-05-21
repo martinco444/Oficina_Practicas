@@ -196,6 +196,7 @@ footer nav ul li a:hover{
 .formulario input[type="date"],
 .formulario input[type="tel"],
 .formulario input[type="email"],
+.formulario input[type="number"],
 .formulario textarea {
     width: 100%;
     padding: 10px;

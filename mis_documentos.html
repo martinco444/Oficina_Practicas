@@ -42,18 +42,27 @@
         <div class="shadow"></div>
     </section>
 
-        <div class="form-container">
-            <h2>Subir Documentos</h2>
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-                <label for="cv">Hoja de vida</label>
-                <input type="file" name="cv" id="cv">
-                <label for="inscripcion">Inscripción</label>
-                <input type="file" name="inscripcion" id="inscripcion">
-                <label for="formularioAceptación">Formulario de Aceptación</label>
-                <input type="file" name="formularioAceptación" id="formularioAceptación">
-                <input type="submit" value="Enviar" name="submit">
-            </form>
-        </div>
+    <div class="download-container">
+        <h2>Descargar Formularios</h2>
+        <ul>
+            <li><a href="formularios/pdf-formato-inscripcion.pdf" download>Descargar Formulario de Inscripción</a></li>
+            <li><a href="formularios/pdf-acta-de-inicio-convenio.pdf" download>Acta inicio de convenio</a></li>
+            <li><a href="formularios/pdf-acta-pasantia-universitaria-practicante.pdf" download>Acta de pasantia universitaria</a></li>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h2>Subir Documentos</h2>
+        <form action="upload.php" method="post" enctype="multipart/form-data">
+            <label for="cv">Hoja de vida</label>
+            <input type="file" name="cv" id="cv">
+            <label for="inscripcion">Inscripción</label>
+            <input type="file" name="inscripcion" id="inscripcion">
+            <label for="formularioAceptación">Acta inicio de convenio </label>
+            <input type="file" name="actaDeInicioDeConvenio" id="#">
+            <input type="submit" value="Enviar" name="submit">
+        </form>
+    </div>
 
     <footer>
         <div class="wrapper">

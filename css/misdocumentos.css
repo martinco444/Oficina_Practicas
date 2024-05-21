@@ -151,32 +151,62 @@ footer nav ul li a:hover{
 }
 
 
+.download-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+}
+
+.download-container h2 {
+    margin-bottom: 20px;
+    color: #333333;
+    font-size: 25px;
+    font-family: "raleway-semibold";
+}
+
+.download-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.download-container ul li {
+    margin-bottom: 10px;
+}
+
+.download-container ul li a {
+    text-decoration: none;
+    color: #412669;
+    font-weight: bold;
+    font-family: "raleway-regular";
+}
+
+.download-container ul li a:hover {
+    text-decoration: underline;
+}
+
 .form-container {
     max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     background: #ffffff;
 }
+
 .form-container h2 {
     margin-bottom: 20px;
-    color: #333;
+    color: #333333;
     font-size: 25px;
     font-family: "raleway-semibold";
 }
+
 .form-container label {
-    font-family: 'raleway-bold';
-    src: url('../fonts/raleway-bold.eot');
-    src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/raleway-bold.woff') format('woff'),
-        url('../fonts/raleway-bold.ttf') format('truetype'),
-        url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
-    font-weight: normal;
-    font-style: normal;
+    font-family: "raleway-semibold";
     display: block;
     margin-bottom: 5px;
-    color: #333;
+    color: #333333;
     font-size: 14px;
 }
+
 .form-container input[type="file"] {
     margin-bottom: 15px;
     padding: 10px;
@@ -184,6 +214,7 @@ footer nav ul li a:hover{
     border: 1px solid #ccc;
     border-radius: 5px;
 }
+
 .form-container input[type="submit"] {
     padding: 10px 20px;
     background-color: #412669;
@@ -193,6 +224,7 @@ footer nav ul li a:hover{
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .form-container input[type="submit"]:hover {
     background-color: #F66D02;
 }
