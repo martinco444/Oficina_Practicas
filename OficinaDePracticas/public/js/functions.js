@@ -133,57 +133,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnRegister = document.getElementById('btnRegister');
     const btnLogin = document.getElementById('btnLogin');
 
-    if (btnRegister) {
-        btnRegister.addEventListener('click', async () => {
-            const nameUser = document.getElementById('nameUser').value;
-            const emailNewUser = document.getElementById('emailNewUser').value;
-            const passNewUser = document.getElementById('passNewUser').value;
-            const personType = document.getElementById('persona').value;
-
-                const response = await fetch('/api/auth/register', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        username: nameUser,
-                        email: emailNewUser,
-                        password: passNewUser,
-                        personType: personType
-                    }),
-                });
-                console.log(response)
-                console.log('Datos enviados al servidor:', {
-                    username: nameUser,
-                    email: emailNewUser,
-                    password: passNewUser,
-                    personType: personType
-                });
-            
-            const data = await response.json();
-            console.log('Datos recibidos del servidor:', data);
-
-            if (response.status === 201) {
-                alert('Usuario registrado con éxito');
-                switch (personType) {
-                    case 'student':
-                        window.location.href = './index.html';
-                        break;
-                    case 'professor':
-                        window.location.href = './indexprofesor.html';
-                        break;
-                    case 'company':
-                        window.location.href = './index_empresa.html';
-                        break;
-                    case 'admin':
-                        window.location.href = './admin.html';
-                        break;
-                }
-            } else {
-                alert(data.msg || 'Error al registrar usuario');
-            }
-        });
-    }
+    document.getElementById('btnRegister').addEventListener('click', async () => {
+        const nameUser = document.getElementById('nameUser').value;
+        const emailNewUser = document.getElementById('emailNewUser').value;
+        const passNewUser = document.getElementById('passNewUser').value;
+        const personType = document.getElementById('persona').value;
+      
+        console.log('Datos a enviar:', { username: nameUser, email: emailNewUser, password: passNewUser, personType: personType });
+      
+        try {
+          const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              username: nameUser,
+              email: emailNewUser,
+              password: passNewUser,
+              personType: personType
+            }),
+          });
+      
+          console.log('Respuesta del servidor:', response);
+      
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.msg || 'Error al registrar usuario');
+          }
+      
+          const data = await response.json();
+          console.log('Usuario registrado:', data);
+        } catch (error) {
+          console.error('Error en la solicitud fetch:', error.message);
+        }
+      });
+      
 
     if (btnLogin) {
         btnLogin.addEventListener('click', async () => {
