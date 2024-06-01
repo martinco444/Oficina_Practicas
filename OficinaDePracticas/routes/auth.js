@@ -1,36 +1,41 @@
 const express = require('express');
+const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const User = require('../models/user');  
+const User = require('../models/user');
+const crypto = require('crypto');
 
-const router = express.Router();
+const JWT_SECRET = crypto.randomBytes(64).toString('hex');
 
+// Ruta de registro
 router.post('/register', async (req, res) => {
-  console.log('Solicitud de registro recibida');
-  const { username, email, password, personType } = req.body;
-
+  // Manejo de la solicitud POST para el registro de usuario
   try {
-    console.log('Buscando usuario existente...');
+    // Obtener datos del cuerpo de la solicitud
+    const { username, email, password, personType } = req.body;
+
+    // Validar que todos los campos necesarios estén presentes
+    if (!username || !email || !password || !personType) {
+      return res.status(400).json({ msg: 'Por favor ingrese todos los campos' });
+    }
+
+    // Verificar si el usuario ya existe en la base de datos
     let user = await User.findOne({ email });
     if (user) {
-      console.log('El usuario ya existe');
       return res.status(400).json({ msg: 'El usuario ya existe' });
     }
 
-    console.log('Creando nuevo usuario...');
+    // Crear un nuevo usuario
     user = new User({ username, email, password, personType });
 
-    // Encriptar contraseña
-    console.log('Encriptando contraseña...');
+    // Encriptar la contraseña antes de almacenarla en la base de datos
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
 
-    console.log('Guardando usuario en la base de datos...');
-
-    //guardar
+    // Guardar el usuario en la base de datos
     await user.save();
 
-    console.log('Usuario registrado con éxito');
+    // Responder con un mensaje de éxito
     res.status(201).json({ msg: 'Usuario registrado con éxito' });
   } catch (err) {
     console.error('Error durante el registro:', err.message);
@@ -38,35 +43,32 @@ router.post('/register', async (req, res) => {
   }
 });
 
-
 // Ruta de inicio de sesión
 router.post('/login', async (req, res) => {
-  console.log('Solicitud de inicio de sesión recibida');
-  const { email, password } = req.body;
-
+  // Manejo de la solicitud POST para el inicio de sesión del usuario
   try {
-    console.log('Buscando usuario...');
+    // Obtener datos del cuerpo de la solicitud
+    const { email, password } = req.body;
+
+    // Verificar si el usuario existe en la base de datos
     const user = await User.findOne({ email });
     if (!user) {
-      console.log('Usuario no encontrado');
       return res.status(400).json({ msg: 'Credenciales inválidas' });
     }
 
-    console.log('Verificando contraseña...');
+    // Verificar si la contraseña proporcionada coincide con la almacenada en la base de datos
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
-      console.log('Contraseña incorrecta');
       return res.status(400).json({ msg: 'Credenciales inválidas' });
     }
 
-    console.log('Generando token JWT...');
+    // Generar un token JWT para autenticación
     const payload = { user: { id: user.id } };
     jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
       if (err) {
         console.error('Error al generar token JWT:', err.message);
         throw err;
       }
-      console.log('Token JWT generado con éxito');
       res.json({ token });
     });
   } catch (err) {

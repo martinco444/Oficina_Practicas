@@ -130,45 +130,48 @@ function fntEmailValidate(email){
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    const btnRegister = document.getElementById('btnRegister');
-    const btnLogin = document.getElementById('btnLogin');
+    const btnRegister = document.getElementById("btnRegister");
+    const btnLogin = document.getElementById("btnLogin");
 
-    document.getElementById('btnRegister').addEventListener('click', async () => {
-        const nameUser = document.getElementById('nameUser').value;
-        const emailNewUser = document.getElementById('emailNewUser').value;
-        const passNewUser = document.getElementById('passNewUser').value;
-        const personType = document.getElementById('persona').value;
-      
-        console.log('Datos a enviar:', { username: nameUser, email: emailNewUser, password: passNewUser, personType: personType });
-      
-        try {
-          const response = await fetch('/api/auth/register', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              username: nameUser,
-              email: emailNewUser,
-              password: passNewUser,
-              personType: personType
-            }),
-          });
-      
-          console.log('Respuesta del servidor:', response);
-      
-          if (!response.ok) {
-            const errorData = await response.json();
-            throw new Error(errorData.msg || 'Error al registrar usuario');
-          }
-      
-          const data = await response.json();
-          console.log('Usuario registrado:', data);
-        } catch (error) {
-          console.error('Error en la solicitud fetch:', error.message);
-        }
-      });
-      
+    if (btnRegister) {
+        btnRegister.addEventListener('click', async () => {
+            const nameUser = document.getElementById('nameUser').value;
+            const emailNewUser = document.getElementById('emailNewUser').value;
+            const passNewUser = document.getElementById('passNewUser').value;
+            const personType = document.getElementById('persona').value;
+
+            console.log('Datos a enviar:', { username: nameUser, email: emailNewUser, password: passNewUser, personType: personType });
+
+            try {
+                const response = await fetch('/api/auth/register', { // URL actualizada
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        username: nameUser,
+                        email: emailNewUser,
+                        password: passNewUser,
+                        personType: personType
+                    }),
+                });
+
+                console.log('Respuesta del servidor:', response);
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.msg || 'Error al registrar usuario');
+                }
+
+                const data = await response.json();
+                console.log('Usuario registrado:', data);
+                alert('Usuario registrado con éxito');
+            } catch (error) {
+                console.error('Error en la solicitud fetch:', error.message);
+                alert(`Error: ${error.message}`);
+            }
+        });
+    }
 
     if (btnLogin) {
         btnLogin.addEventListener('click', async () => {
@@ -176,21 +179,32 @@ document.addEventListener('DOMContentLoaded', () => {
             const passUser = document.getElementById('passUser').value;
             const personType = document.getElementById('persona').value;
 
-            const response = await fetch('/api/auth/login', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: emailUser,
-                    password: passUser,
-                    personType: personType
-                }),
-            });
+            console.log('Datos a enviar:', { email: emailUser, password: passUser, personType: personType });
 
-            const data = await response.json();
-            if (response.status === 200) {
+            try {
+                const response = await fetch('/api/auth/login', { // URL actualizada
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: emailUser,
+                        password: passUser,
+                        personType: personType
+                    }),
+                });
+
+                console.log('Respuesta del servidor:', response);
+
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.msg || 'Error al iniciar sesión');
+                }
+
+                const data = await response.json();
+                console.log('Inicio de sesión exitoso:', data);
                 alert('Inicio de sesión exitoso');
+
                 switch (personType) {
                     case 'student':
                         window.location.href = './index.html';
@@ -204,9 +218,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     case 'admin':
                         window.location.href = './admin.html';
                         break;
+                    default:
+                        console.error('Tipo de persona no reconocido');
                 }
-            } else {
-                alert(data.msg || 'Error al iniciar sesión');
+            } catch (error) {
+                console.error('Error en la solicitud fetch:', error.message);
+                alert(`Error: ${error.message}`);
             }
         });
     }

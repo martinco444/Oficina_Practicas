@@ -104,6 +104,10 @@ input[type="email"], input[type="password"], input[type="text"]{
 	font-size: 11pt;
 	letter-spacing: 1px;
 }
+.btnFormLogin:hover{
+	background-color:#f79c57;
+}
+
 .divButton{
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -150,8 +154,17 @@ input[type="email"], input[type="password"], input[type="text"]{
 #btnNextEmail{
 	background-color: #412669;
 }
+#btnNextEmail:hover{
+	background-color: #8c6abe;
+}
+
+
 #btnCancelar{
-	background-color: #aeaeae;
+	background-color: #4d4a4a;
+}
+
+#btnCancelar:hover{
+	background-color:#8f8a8a;
 }
 
 .divBtnAction{
