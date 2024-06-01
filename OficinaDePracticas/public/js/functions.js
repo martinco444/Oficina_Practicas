@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Datos a enviar:', { username: nameUser, email: emailNewUser, password: passNewUser, personType: personType });
 
             try {
-                const response = await fetch('/api/auth/register', { // URL actualizada
+                const response = await fetch('/api/auth/register', { 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             console.log('Datos a enviar:', { email: emailUser, password: passUser, personType: personType });
 
             try {
-                const response = await fetch('/api/auth/login', { // URL actualizada
+                const response = await fetch('/api/auth/login', { 
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -203,19 +203,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const data = await response.json();
                 console.log('Inicio de sesión exitoso:', data);
-                alert('Inicio de sesión exitoso');
 
                 switch (personType) {
-                    case 'student':
+                    case 'Estudiante':
                         window.location.href = './index.html';
                         break;
-                    case 'professor':
+                    case 'Profesor':
                         window.location.href = './indexprofesor.html';
                         break;
-                    case 'company':
+                    case 'Empresa':
                         window.location.href = './index_empresa.html';
                         break;
-                    case 'admin':
+                    case 'Administrador':
                         window.location.href = './admin.html';
                         break;
                     default:
