@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         window.location.href = './index_empresa.html';
                         break;
                     case 'Administrador':
-                        window.location.href = './admin.html';
+                        window.location.href = './indexAdmin.html';
                         break;
                     default:
                         console.error('Tipo de persona no reconocido');

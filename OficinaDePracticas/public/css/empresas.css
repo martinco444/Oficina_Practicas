@@ -263,3 +263,19 @@ footer nav ul li a:hover{
     border-color: #F66D02;
     outline: none;
 }
+
+
+/*Admin*/
+
+.valid{
+    text-decoration: none;
+    margin-right: 10px;
+    font-family: "raleway-semibold";
+    font-size: 14px;
+    color: #412669;
+
+}
+
+.valid:hover{
+    color: #F66D02;
+}
