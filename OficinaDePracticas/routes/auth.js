@@ -3,39 +3,33 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
-const crypto = require('crypto');
+const config = require('config');
+const authMiddleware = require('../middleware/auth');
+const { check, validationResult } = require('express-validator');
 
-const JWT_SECRET = crypto.randomBytes(64).toString('hex');
+const JWT_SECRET = config.get('jwtSecret');
 
-// Ruta de registro
+
 router.post('/register', async (req, res) => {
-  // Manejo de la solicitud POST para el registro de usuario
   try {
-    // Obtener datos del cuerpo de la solicitud
     const { username, email, password, personType } = req.body;
 
-    // Validar que todos los campos necesarios estén presentes
     if (!username || !email || !password || !personType) {
       return res.status(400).json({ msg: 'Por favor ingrese todos los campos' });
     }
 
-    // Verificar si el usuario ya existe en la base de datos
     let user = await User.findOne({ email });
     if (user) {
       return res.status(400).json({ msg: 'El usuario ya existe' });
     }
 
-    // Crear un nuevo usuario
     user = new User({ username, email, password, personType });
 
-    // Encriptar la contraseña antes de almacenarla en la base de datos
     const salt = await bcrypt.genSalt(10);
     user.password = await bcrypt.hash(password, salt);
 
-    // Guardar el usuario en la base de datos
     await user.save();
 
-    // Responder con un mensaje de éxito
     res.status(201).json({ msg: 'Usuario registrado con éxito' });
   } catch (err) {
     console.error('Error durante el registro:', err.message);
@@ -43,38 +37,46 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Ruta de inicio de sesión
-router.post('/login', async (req, res) => {
-  // Manejo de la solicitud POST para el inicio de sesión del usuario
-  try {
-    // Obtener datos del cuerpo de la solicitud
-    const { email, password } = req.body;
-
-    // Verificar si el usuario existe en la base de datos
-    const user = await User.findOne({ email });
-    if (!user) {
-      return res.status(400).json({ msg: 'Credenciales inválidas' });
+router.post(
+  '/login',
+  [
+    check('email', 'Por favor incluye un correo válido').isEmail(),
+    check('password', 'La contraseña es requerida').exists(),
+    check('personType', 'El tipo de persona es requerido').not().isEmpty(),
+  ],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
     }
 
-    // Verificar si la contraseña proporcionada coincide con la almacenada en la base de datos
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) {
-      return res.status(400).json({ msg: 'Credenciales inválidas' });
-    }
+    const { email, password, personType } = req.body;
 
-    // Generar un token JWT para autenticación
-    const payload = { user: { id: user.id } };
-    jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
-      if (err) {
-        console.error('Error al generar token JWT:', err.message);
-        throw err;
+    try {
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(400).json({ msg: 'Credenciales inválidas' });
       }
-      res.json({ token });
-    });
-  } catch (err) {
-    console.error('Error durante el inicio de sesión:', err.message);
-    res.status(500).send('Error del servidor');
+
+      if (user.personType !== personType) {
+        return res.status(400).json({ msg: 'Tipo de persona incorrecto' });
+      }
+
+      const isMatch = await bcrypt.compare(password, user.password);
+      if (!isMatch) {
+        return res.status(400).json({ msg: 'Credenciales inválidas' });
+      }
+
+      const payload = { user: { id: user.id } };
+      jwt.sign(payload, JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
+        if (err) throw err;
+        res.json({ token });
+      });
+    } catch (err) {
+      console.error('Error durante el inicio de sesión:', err.message);
+      res.status(500).send('Error del servidor');
+    }
   }
-});
+);
 
 module.exports = router;

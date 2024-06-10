@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const nameUser = document.getElementById('nameUser').value;
             const emailNewUser = document.getElementById('emailNewUser').value;
             const passNewUser = document.getElementById('passNewUser').value;
-            const personType = document.getElementById('persona').value;
+            const personType = document.getElementById('personaRegister').value;
 
             console.log('Datos a enviar:', { username: nameUser, email: emailNewUser, password: passNewUser, personType: personType });
 
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnLogin.addEventListener('click', async () => {
             const emailUser = document.getElementById('emailUser').value;
             const passUser = document.getElementById('passUser').value;
-            const personType = document.getElementById('persona').value;
+            const personType = document.getElementById('personaLogin').value;
 
             console.log('Datos a enviar:', { email: emailUser, password: passUser, personType: personType });
 
@@ -202,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const data = await response.json();
+                localStorage.setItem('token', data.token);
                 console.log('Inicio de sesión exitoso:', data);
 
                 switch (personType) {

@@ -1,7 +1,45 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', async function () {
     const editButton = document.getElementById('editButton');
     const inputs = document.querySelectorAll('.edit-mode');
     const spans = document.querySelectorAll('span[id]');
+
+    const token = localStorage.getItem('token');
+
+    if (!token) {
+        console.error('No se encontró un token, la autorización fallará');
+        return;
+    }
+
+    async function obtenerPerfil() {
+        try {
+            const res = await fetch('/api/profile', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'x-auth-token': token
+                }
+            });
+
+            const data = await res.json();
+
+            if (res.status === 200) {
+                for (const key in data) {
+                    if (data.hasOwnProperty(key)) {
+                        const span = document.getElementById(key);
+                        const input = document.getElementById(`${key}Input`);
+                        if (span) span.textContent = data[key];
+                        if (input) input.value = data[key];
+                    }
+                }
+            } else {
+                console.error('Error al obtener el perfil:', data.errors);
+            }
+        } catch (error) {
+            console.error('Error en el servidor:', error);
+        }
+    }
+
+    await obtenerPerfil();
 
     editButton.addEventListener('click', async function () {
         const isEditMode = editButton.textContent === 'Editar';
@@ -28,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${localStorage.getItem('token')}`
+                        'x-auth-token': token
                     },
                     body: JSON.stringify(perfilData)
                 });

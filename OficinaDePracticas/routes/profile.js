@@ -5,6 +5,22 @@ const Perfil = require('../models/profile');
 
 const router = express.Router();
 
+// @route    GET api/perfil
+// @desc     Obtener perfil del usuario actual
+// @access   Private
+router.get('/', auth, async (req, res) => {
+  try {
+    const perfil = await Perfil.findOne({ usuario: req.user.id });
+    if (!perfil) {
+      return res.status(404).json({ msg: 'No se encontró el perfil del usuario' });
+    }
+    res.json(perfil);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send('Error en el servidor');
+  }
+});
+
 // @route    POST api/perfil
 // @desc     Crear o actualizar perfil de usuario
 // @access   Private
@@ -16,8 +32,8 @@ router.post('/',
       check('correo', 'Correo es requerido').isEmail(),
       check('universidad', 'Universidad es requerida').not().isEmpty(),
       check('carrera', 'Carrera es requerida').not().isEmpty(),
-      check('habilidadesTecnicas', 'Habilidades Técnicas son requeridas').not().isEmpty(),
-      check('habilidadesBlandas', 'Habilidades Blandas son requeridas').not().isEmpty(),
+      check('habilidades_tecnicas', 'Habilidades Técnicas son requeridas').not().isEmpty(),
+      check('habilidades_blandas', 'Habilidades Blandas son requeridas').not().isEmpty(),
     ],
   ],
   async (req, res) => {
@@ -33,19 +49,19 @@ router.post('/',
       telefono,
       universidad,
       carrera,
-      nivelEducativo,
-      InicioEstudios,
-      Graduacion,
-      Empresa,
-      Puesto,
-      InicioTrabajo,
-      FinTrabajo,
+      nivel_educativo,
+      fecha_inicio_estudios,
+      fecha_graduacion_esperada,
+      empresa,
+      puesto,
+      fecha_inicio_trabajo,
+      fecha_fin_trabajo,
       responsabilidades,
       idiomas,
-      habilidadesTecnicas,
-      habilidadesBlandas,
-      nombreProyecto,
-      descripcionProyecto
+      habilidades_tecnicas,
+      habilidades_blandas,
+      proyecto_nombre,
+      proyecto_descripcion
     } = req.body;
 
     // Construir objeto de perfil
@@ -57,19 +73,19 @@ router.post('/',
     if (telefono) perfilCampos.telefono = telefono;
     if (universidad) perfilCampos.universidad = universidad;
     if (carrera) perfilCampos.carrera = carrera;
-    if (nivelEducativo) perfilCampos.nivelEducativo = nivelEducativo;
-    if (InicioEstudios) perfilCampos.InicioEstudios = InicioEstudios;
-    if (Graduacion) perfilCampos.Graduacion = Graduacion;
-    if (Empresa) perfilCampos.Empresa = Empresa;
-    if (Puesto) perfilCampos.Puesto = Puesto;
-    if (InicioTrabajo) perfilCampos.InicioTrabajo = InicioTrabajo;
-    if (FinTrabajo) perfilCampos.FinTrabajo = FinTrabajo;
+    if (nivel_educativo) perfilCampos.nivel_educativo = nivel_educativo;
+    if (fecha_inicio_estudios) perfilCampos.fecha_inicio_estudios = fecha_inicio_estudios;
+    if (fecha_graduacion_esperada) perfilCampos.fecha_graduacion_esperada = fecha_graduacion_esperada;
+    if (empresa) perfilCampos.empresa = empresa;
+    if (puesto) perfilCampos.puesto = puesto;
+    if (fecha_inicio_trabajo) perfilCampos.fecha_inicio_trabajo = fecha_inicio_trabajo;
+    if (fecha_fin_trabajo) perfilCampos.fecha_fin_trabajo = fecha_fin_trabajo;
     if (responsabilidades) perfilCampos.responsabilidades = responsabilidades;
     if (idiomas) perfilCampos.idiomas = idiomas;
-    if (habilidadesTecnicas) perfilCampos.habilidadesTecnicas = habilidadesTecnicas;
-    if (habilidadesBlandas) perfilCampos.habilidadesBlandas = habilidadesBlandas;
-    if (nombreProyecto) perfilCampos.nombreProyecto = nombreProyecto;
-    if (descripcionProyecto) perfilCampos.descripcionProyecto = descripcionProyecto;
+    if (habilidades_tecnicas) perfilCampos.habilidades_tecnicas = habilidades_tecnicas;
+    if (habilidades_blandas) perfilCampos.habilidades_blandas = habilidades_blandas;
+    if (proyecto_nombre) perfilCampos.proyecto_nombre = proyecto_nombre;
+    if (proyecto_descripcion) perfilCampos.proyecto_descripcion = proyecto_descripcion;
 
     try {
       let perfil = await Perfil.findOne({ usuario: req.user.id });
