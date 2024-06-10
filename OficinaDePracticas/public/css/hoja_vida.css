@@ -374,3 +374,11 @@ input[type="file"] {
 .back-button-container a i {
     margin-left: 15px;
 }
+
+
+#vistaPrevia{
+    font-family: "raleway-semibold";
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+

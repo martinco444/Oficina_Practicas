@@ -11,23 +11,20 @@
     <link rel="icon" type="image/png" href="./img/logoLogin.png"/>
     <link rel="stylesheet" href="css/notificaciones.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 </head>
 
 <body>
-
     <section class="container_header">
         <header class="header">
             <a href="#"><img class="logo" src="./img/logomorado.png" alt="Beijing Chinese Restaurant Logo"/></a>
             <nav>
                 <ul>
-					<li><a href="index.html">Inicio</a></li>
-					
-					<li><a href="./curso.html">Curso</a></li>
-					<li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
-					<li><a href="./empresas.html">Empresas</a></li>
-					<li><a href="./mis_documentos.html">Mis documentos</a></li>
-					<li><a href="./profile.html">Perfil</a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./curso.html">Curso</a></li>
+                    <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+                    <li><a href="./empresas.html">Empresas</a></li>
+                    <li><a href="./mis_documentos.html">Mis documentos</a></li>
+                    <li><a href="./profile.html">Perfil</a></li>
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()"><i class="fas fa-bell"></i></a>
                         <div id="dropdownMenu" class="dropdown-content">
@@ -35,7 +32,7 @@
                             <a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
                         </div>
                     </li>
-				</ul>
+                </ul>
             </nav>
         </header>
         <div class="shadow"></div>
@@ -48,61 +45,56 @@
             <form action="upload.php" method="post" enctype="multipart/form-data">
                 <label for="imagenPerfil">Selecciona tu foto de perfil:</label>
                 <input type="file" id="imagenPerfil" name="imagenPerfil" accept=".png" onchange="mostrarImagen()">
+                <img id="vistaPrevia" src="#" alt="Vista Previa de la Imagen">
             </form>
-            <input type="text" id="nombre" placeholder="Nombre completo" onkeyup="actualizarPrevisualizacion()">
-            <input type="date" id="fecha_nacimiento" placeholder="Fecha de nacimiento" onchange="actualizarPrevisualizacion()">
-            <input type="text" id="genero" placeholder="Género" onkeyup="actualizarPrevisualizacion()">
-            <input type="text" id="direccion" placeholder="Dirección" onkeyup="actualizarPrevisualizacion()">
-            <input type="tel" id="telefono" placeholder="Teléfono" onkeyup="actualizarPrevisualizacion()">
-            <input type="email" id="email" placeholder="Correo electrónico" onkeyup="actualizarPrevisualizacion()"><br><br><br>
+            <input type="text" id="nombre" placeholder="Nombre completo" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="date" id="fecha_nacimiento" placeholder="Fecha de nacimiento" onchange="actualizarPrevisualizacion()" required>
+            <input type="text" id="genero" placeholder="Género" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="text" id="direccion" placeholder="Dirección" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="tel" id="telefono" placeholder="Teléfono" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="email" id="email" placeholder="Correo electrónico" onkeyup="actualizarPrevisualizacion()" required><br><br><br>
 
             <h2>Formación Académica</h2>
-            <input type="text" id="universidad" placeholder="Universidad" onkeyup="actualizarPrevisualizacion()">
-            <input type="text" id="carrera" placeholder="Carrera" onkeyup="actualizarPrevisualizacion()">
-            <input type="date" id="fecha_inicio" placeholder="Fecha de inicio" onchange="actualizarPrevisualizacion()">
-            <input type="date" id="fecha_graduacion" placeholder="Fecha de graduación esperada" onchange="actualizarPrevisualizacion()">
-            <input type="number" id="promedio" placeholder="Promedio de calificaciones" onkeyup="actualizarPrevisualizacion()"><br><br><br>
+            <input type="text" id="universidad" placeholder="Universidad" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="text" id="carrera" placeholder="Carrera" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="date" id="fecha_inicio" placeholder="Fecha de inicio" onchange="actualizarPrevisualizacion()" required>
+            <input type="date" id="fecha_graduacion" placeholder="Fecha de graduación esperada" onchange="actualizarPrevisualizacion()" required>
+            <input type="number" id="promedio" placeholder="Promedio de calificaciones" onkeyup="actualizarPrevisualizacion()" required><br><br><br>
 
             <h2>Experiencia Laboral</h2>
-            <input type="text" id="empresa" placeholder="Empresa" onkeyup="actualizarPrevisualizacion()">
-            <input type="text" id="cargo" placeholder="Cargo" onkeyup="actualizarPrevisualizacion()">
-            <input type="date" id="inicio_trabajo" placeholder="Fecha de inicio" onchange="actualizarPrevisualizacion()">
-            <input type="date" id="fin_trabajo" placeholder="Fecha de finalización" onchange="actualizarPrevisualizacion()">
-            <textarea id="responsabilidades" placeholder="Responsabilidades" onkeyup="actualizarPrevisualizacion()"></textarea><br><br><br>
+            <input type="text" id="empresa" placeholder="Empresa" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="text" id="cargo" placeholder="Cargo" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="date" id="inicio_trabajo" placeholder="Fecha de inicio" onchange="actualizarPrevisualizacion()" required>
+            <input type="date" id="fin_trabajo" placeholder="Fecha de finalización" onchange="actualizarPrevisualizacion()" required>
+            <textarea id="responsabilidades" placeholder="Responsabilidades" onkeyup="actualizarPrevisualizacion()" required></textarea><br><br><br>
 
             <h2>Habilidades</h2>
-            <textarea id="idiomas" placeholder="Idiomas" onkeyup="actualizarPrevisualizacion()"></textarea>
-            <textarea id="habilidades_tecnicas" placeholder="Habilidades Técnicas" onkeyup="actualizarPrevisualizacion()"></textarea>
-            <textarea id="habilidades_blandas" placeholder="Habilidades Blandas" onkeyup="actualizarPrevisualizacion()"></textarea><br><br><br>
+            <textarea id="idiomas" placeholder="Idiomas" onkeyup="actualizarPrevisualizacion()" required></textarea>
+            <textarea id="habilidades_tecnicas" placeholder="Habilidades Técnicas" onkeyup="actualizarPrevisualizacion()" required></textarea>
+            <textarea id="habilidades_blandas" placeholder="Habilidades Blandas" onkeyup="actualizarPrevisualizacion()" required></textarea><br><br><br>
 
             <h2>Referencias</h2>
-            <input type="text" id="nombre_referencia" placeholder="Nombre de referencia" onkeyup="actualizarPrevisualizacion()">
-            <input type="text" id="cargo_referencia" placeholder="Cargo o relación" onkeyup="actualizarPrevisualizacion()">
-            <input type="tel" id="telefono_referencia" placeholder="Teléfono de referencia" onkeyup="actualizarPrevisualizacion()">
-            <input type="email" id="email_referencia" placeholder="Correo electrónico de referencia" onkeyup="actualizarPrevisualizacion()"><br><br><br>
+            <input type="text" id="nombre_referencia" placeholder="Nombre de referencia" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="text" id="cargo_referencia" placeholder="Cargo o relación" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="tel" id="telefono_referencia" placeholder="Teléfono de referencia" onkeyup="actualizarPrevisualizacion()" required>
+            <input type="email" id="email_referencia" placeholder="Correo electrónico de referencia" onkeyup="actualizarPrevisualizacion()" required><br><br><br>
         </div>
         <div class="pre">
             <h2>Previsualización de Hoja de Vida</h2>
             <div class="previsualizacion">
-                <!-- Previsualización de Hoja de Vida -->
-                
                 <div id="previsualizacion">
-                    <!-- Aquí se mostrará la previsualización -->
+                    
                 </div>
-                
             </div>
             <button  onclick="descargarHojaVida()">Descargar Hoja de Vida</button>  
         </div>
-
     </div>
 
     <script type="text/javascript" src="js/notificaciones.js"></script>
-
     <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="./js/wow.js"></script>
     <script type="text/javascript" src="./js/main.js"></script>
     <script type="text/javascript" src="./slick/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <script>
@@ -119,7 +111,6 @@
         }
 
         function actualizarPrevisualizacion() {
-            // Obtener valores de los campos del formulario
             var nombre = document.getElementById('nombre').value;
             var fechaNacimiento = document.getElementById('fecha_nacimiento').value;
             var genero = document.getElementById('genero').value;
@@ -144,7 +135,6 @@
             var telefonoReferencia = document.getElementById('telefono_referencia').value;
             var emailReferencia = document.getElementById('email_referencia').value;
 
-            // Construir la previsualización con los valores obtenidos
             var previsualizacionHTML = `
                 <img id="vistaPrevia" src="#" alt="Vista Previa de la Imagen">
                 <h2><strong>Información Personal:</strong></h2>
@@ -155,7 +145,6 @@
                 <p>Teléfono: ${telefono}</p>
                 <p>Correo Electrónico: ${email}</p>
                 <br>
-
                 <h2><strong>Formación Académica:</strong></h2>
                 <p>Universidad: ${universidad}</p>
                 <p>Carrera: ${carrera}</p>
@@ -163,7 +152,6 @@
                 <p>Fecha de Graduación Esperada: ${fechaGraduacion}</p>
                 <p>Promedio de Calificaciones: ${promedio}</p>
                 <br>
-
                 <h2><strong>Experiencia Laboral:</strong></h2>
                 <p>Empresa: ${empresa}</p>
                 <p>Cargo: ${cargo}</p>
@@ -171,13 +159,11 @@
                 <p>Fin de Trabajo: ${finTrabajo}</p>
                 <p>Responsabilidades: ${responsabilidades}</p>
                 <br>
-
                 <h2><strong>Habilidades:</strong></h2>
                 <p>Idiomas: ${idiomas}</p>
                 <p>Habilidades Técnicas: ${habilidadesTecnicas}</p>
                 <p>Habilidades Blandas: ${habilidadesBlandas}</p>
                 <br>
-
                 <h2><strong>Referencias:</strong></h2>
                 <p>Nombre de Referencia: ${nombreReferencia}</p>
                 <p>Cargo o Relación: ${cargoReferencia}</p>
@@ -187,32 +173,120 @@
 
             document.getElementById('previsualizacion').innerHTML = previsualizacionHTML;
         }
+
+        function descargarHojaVida() {
+    var { jsPDF } = window.jspdf;
+    var doc = new jsPDF('p', 'pt', 'letter'); // Tamaño carta (8.5 x 11 pulgadas)
+
+    // Datos del formulario
+    var datos = {
+        "HOJA DE VIDA ESTUDIANTIL": {},
+        "Información Personal": {
+            "Nombre": document.getElementById('nombre').value,
+            "Fecha de Nacimiento": document.getElementById('fecha_nacimiento').value,
+            "Género": document.getElementById('genero').value,
+            "Dirección": document.getElementById('direccion').value,
+            "Teléfono": document.getElementById('telefono').value,
+            "Correo Electrónico": document.getElementById('email').value
+        },
+        "Formación Académica": {
+            "Universidad": document.getElementById('universidad').value,
+            "Carrera": document.getElementById('carrera').value,
+            "Fecha de Inicio": document.getElementById('fecha_inicio').value,
+            "Fecha de Graduación Esperada": document.getElementById('fecha_graduacion').value,
+            "Promedio de Calificaciones": document.getElementById('promedio').value
+        },
+        "Experiencia Laboral": {
+            "Empresa": document.getElementById('empresa').value,
+            "Cargo": document.getElementById('cargo').value,
+            "Inicio de Trabajo": document.getElementById('inicio_trabajo').value,
+            "Fin de Trabajo": document.getElementById('fin_trabajo').value,
+            "Responsabilidades": document.getElementById('responsabilidades').value
+        },
+        "Habilidades": {
+            "Idiomas": document.getElementById('idiomas').value,
+            "Habilidades Técnicas": document.getElementById('habilidades_tecnicas').value,
+            "Habilidades Blandas": document.getElementById('habilidades_blandas').value
+        },
+        "Referencias": {
+            "Nombre de Referencia": document.getElementById('nombre_referencia').value,
+            "Cargo o Relación": document.getElementById('cargo_referencia').value,
+            "Teléfono de Referencia": document.getElementById('telefono_referencia').value,
+            "Correo Electrónico de Referencia": document.getElementById('email_referencia').value
+        }
+    };
+
+    // Definir posición inicial
+    var y = 40;
+
+    // Iterar sobre los datos y agregarlos al PDF
+    for (var seccion in datos) {
+        if (datos.hasOwnProperty(seccion)) {
+            doc.setFontSize(18);
+            doc.setTextColor(0, 0, 255);
+            doc.text(40, y, seccion);
+            y += 25;
+
+            if (seccion !== "HOJA DE VIDA ESTUDIANTIL") {
+                for (var dato in datos[seccion]) {
+                    if (datos[seccion].hasOwnProperty(dato)) {
+                        doc.setFontSize(12);
+                        doc.setTextColor(0);
+                        doc.text(60, y, dato + ": " + datos[seccion][dato]);
+                        y += 18;
+                    }
+                }
+                y += 10; // Espacio entre secciones
+            } else {
+                doc.setLineWidth(2);
+                doc.line(40, y - 10, 560, y - 10); // Línea horizontal debajo del título
+                y += 20; // Espacio después del título
+            }
+        }
+    }
+
+    // Insertar la imagen
+    var imagen = document.getElementById('vistaPrevia');
+    var canvas = document.createElement('canvas');
+    var ctx = canvas.getContext('2d');
+    canvas.width = imagen.width;
+    canvas.height = imagen.height;
+    ctx.drawImage(imagen, 0, 0, canvas.width, canvas.height);
+
+    var imgData = canvas.toDataURL('image/jpeg');
+    doc.addImage(imgData, 'JPEG', 400, 40, 100, 100); // Insertar imagen en la esquina superior derecha
+
+    // Descargar el PDF
+    doc.save('hoja_de_vida_estudiantil.pdf');
+}
+
+
     </script>
 
-<footer>
-	<div class="wrapper">
-		<div class="rights">
-			<p>Oficina de practicas</p>
-		</div>
-
-		<nav>
-			<ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="./curso.html">Curso</a></li>
-                <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
-                <li><a href="./empresas.html">Empresas</a></li>
-                <li><a href="./mis_documentos.html">Mis documentos</a></li>
-                <li><a href="./profile.html">Perfil</a></li>
-                <li class="dropdown">
-                    <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-bell"></i></a>
-                    <div class="dropdown-content">
-                        <a href="#"><i></i> Notificaciones</a>
-                        <a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
-                    </div>
-                </li>
-            </ul>
-		</nav>
-	</div>		
-</footer>
+    <footer>
+        <div class="wrapper">
+            <div class="rights">
+                <p>Oficina de practicas</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./curso.html">Curso</a></li>
+                    <li><a href="./hoja_de_vida.html">Hoja de vida</a></li>
+                    <li><a href="./empresas.html">Empresas</a></li>
+                    <li><a href="./mis_documentos.html">Mis documentos</a></li>
+                    <li><a href="./profile.html">Perfil</a></li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0)" class="dropbtn"><i class="fas fa-bell"></i></a>
+                        <div class="dropdown-content">
+                            <a href="#"><i></i> Notificaciones</a>
+                            <a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
 </body>
 </html>
+
