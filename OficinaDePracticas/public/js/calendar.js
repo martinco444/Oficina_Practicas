@@ -1,28 +1,25 @@
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', async function() {
     const calendarEl = document.getElementById('calendar');
-    const calendar = new FullCalendar.Calendar(calendarEl, {
-        initialView: 'dayGridMonth',
-        events: []
-    });
+    const email = 'gissel@gmail.com'; // Aquí usarías el correo del usuario autenticado
+
+    let events = [];
 
     try {
-        const res = await fetch('/api/event', {
-            method: 'GET',
-            headers: {
-                'x-auth-token': localStorage.getItem('token')
-            }
-        });
+        const res = await fetch(`/api/event/user/${email}`);
+        events = await res.json();
+    } catch (err) {
+        console.error('Error al cargar los eventos:', err);
+    }
 
-        const data = await res.json();
-        const events = data.map(event => ({
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+        events: events.map(event => ({
             title: event.eventname,
             start: event.date,
-            description: event.summary
-        }));
+            description: event.reason,
+            professor: event.professor
+        }))
+    });
 
-        calendar.addEventSource(events);
-        calendar.render();
-    } catch (err) {
-        console.error('Error al cargar eventos:', err);
-    }
+    calendar.render();
 });

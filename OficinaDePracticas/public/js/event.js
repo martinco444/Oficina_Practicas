@@ -1,38 +1,45 @@
-document.getElementById('addEventForm').addEventListener('submit', async function (e) {
-    e.preventDefault();
+document.getElementById('addEventForm').addEventListener('submit', function(event) {
+    event.preventDefault();
 
-    const eventname = document.getElementById('eventName').value;
+    // Recoger los datos del formulario
+    const eventName = document.getElementById('eventName').value;
     const professor = document.getElementById('professor').value;
     const reason = document.getElementById('reason').value;
     const members = document.getElementById('members').value;
     const date = document.getElementById('date').value;
 
-    const eventData = {
-        eventname,
-        professor,
-        reason,
-        members,
-        date
+    // Crear un objeto de evento
+    const newEvent = {
+        title: eventName,
+        professor: professor,
+        reason: reason,
+        members: members.split(',').map(email => email.trim()),
+        start: date
     };
 
-    try {
-        const res = await fetch('/api/event', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'x-auth-token': localStorage.getItem('token')
-            },
-            body: JSON.stringify(eventData)
-        });
-
-        if (res.status === 200) {
-            alert('Evento creado con éxito');
-            document.getElementById('addEventForm').reset();
-        } else {
-            const data = await res.json();
-            alert(`Error al crear el evento: ${data.errors.map(error => error.msg).join(', ')}`);
+    // Guardar el evento en un archivo JSON
+    fetch('./php/save_event.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(newEvent)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
         }
-    } catch (err) {
-        console.error('Error del servidor:', err);
-    }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            alert('Evento guardado exitosamente');
+            // Redirigir o actualizar la página si es necesario
+        } else {
+            alert('Error: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error al guardar el evento:', error);
+    });
 });

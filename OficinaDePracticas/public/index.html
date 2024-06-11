@@ -94,7 +94,18 @@
     <script type="text/javascript" src="js/main.js"></script>
 	<script type="text/javascript" src="js/notificaciones.js"></script>
 	<script type="text/javascript" src="js/calendar.js"></script>
-
+	<script>
+		$(document).ready(function() {
+			$('#calendar').fullCalendar({
+				events: './json/events.json',
+				eventRender: function(event, element) {
+					element.qtip({
+						content: event.professor + '<br>' + event.reason + '<br>' + event.members.join(', ')
+					});
+				}
+			});
+		});
+		</script>
 	
 	<script type="text/javascript" src="js/jquery.min.1.7.js"></script>
 	<script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>

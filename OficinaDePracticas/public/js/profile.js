@@ -3,20 +3,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     const inputs = document.querySelectorAll('.edit-mode');
     const spans = document.querySelectorAll('span[id]');
 
-    const token = localStorage.getItem('token');
 
-    if (!token) {
-        console.error('No se encontró un token, la autorización fallará');
-        return;
-    }
 
     async function obtenerPerfil() {
         try {
             const res = await fetch('/api/profile', {
                 method: 'GET',
                 headers: {
-                    'Content-Type': 'application/json',
-                    'x-auth-token': token
+                    'Content-Type': 'application/json'
                 }
             });
 
@@ -66,7 +60,6 @@ document.addEventListener('DOMContentLoaded', async function () {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'x-auth-token': token
                     },
                     body: JSON.stringify(perfilData)
                 });

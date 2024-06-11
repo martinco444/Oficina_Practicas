@@ -202,7 +202,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
 
                 const data = await response.json();
-                localStorage.setItem('token', data.token);
                 console.log('Inicio de sesión exitoso:', data);
 
                 switch (personType) {

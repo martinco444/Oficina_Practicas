@@ -1,14 +1,11 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const auth = require('../middleware/auth');
 const Perfil = require('../models/profile');
 
 const router = express.Router();
 
-// @route    GET api/perfil
-// @desc     Obtener perfil del usuario actual
-// @access   Private
-router.get('/', auth, async (req, res) => {
+
+router.get('/', async (req, res) => {
   try {
     const perfil = await Perfil.findOne({ usuario: req.user.id });
     if (!perfil) {
@@ -21,12 +18,10 @@ router.get('/', auth, async (req, res) => {
   }
 });
 
-// @route    POST api/perfil
-// @desc     Crear o actualizar perfil de usuario
-// @access   Private
-router.post('/',
+
+router.post(
+  '/',
   [
-    auth,
     [
       check('nombre', 'Nombre es requerido').not().isEmpty(),
       check('correo', 'Correo es requerido').isEmail(),
